@@ -1,0 +1,44 @@
+HELIO4CAST LineupCAT v2.0 
+
+This is the HELIO4CAST lineup catalog. 
+This is version 2.0, released 2024-May-7. doi: 10.6084/m9.figshare.15134745 
+
+Rules: If results are produced with this catalog for peer-reviewed scientific publications,
+please contact chris.moestl@outlook.com , eva.weiler@geosphere.at and emma.davies@geosphere.at for possible co-authorships. 
+The reference for this catalog is Moestl et al. 2022 ApJL doi:10.3847/2041-8213/ac42d0. 
+
+The catalog is available as a python pandas dataframe (pickle), json, csv, xlsx, txt, at 
+https://helioforecast.space/lineups and https://doi.org/10.6084/m9.figshare.15134745. 
+
+Number of events: 116
+ICME observatories: Solar Orbiter, Parker Solar Probe (PSP), BepiColombo, Wind, STEREO-A.   
+Time range: April 2020 - April 2024. 
+
+Authors: Eva Weiler, Christian Möstl, Emma E. Davies, Austrian Space Weather Office, GeoSphere Austria, Graz, Austria. 
+Contributors, Andreas J. Weiss, Rachel L. Bailey, Martin A. Reiss, D. Barnes, J. A. Davies, R. A. Harrison. 
+
+The python source code for producing this catalog is available at https://github.com/EvaWeiler/LineupCAT lineupcat.ipynb
+
+Each event has unique identifier either from the HELIO4CAST ICMECAT, the HELCATS HIGeoCAT or the DONKI database. 
+
+Comments:
+
+- Spacecraft positions are given in Heliocentric Earth Equatorial Coordinates (HEEQ) coordinates.Parameters: 
+01: event: To which multipoint event the row belongs to, unit: integer. 
+02: lineupcat_id: Observations that are assigned to the same ICME are given the same ID. unit: string. 
+03: event_start_time: For in situ spacecraft, similar to icme_start_time in the ICMECAT. For STEREO-A-HI (HIA),
+its the see_launch_time from HIGeoCAT, for DONKI its time21_5 from the DONKI database. unit: UTC. 
+04: spacecraft: HIA if the entry refers to observations from STEREO-A-HI; 
+STEREO A: SECCHI/COR2, SOHO: LASCO/C2 if the entry refers to coronagraph observations by either STEREO-A or SOHO; 
+otherwise the in situ observing spacecraft. unit: string. 
+05: sc_heliodistance: Heliocentric distance of the spacecraft at event_start_time. unit: AU. 
+06: sc_long_heeq: Heliospheric longitude of the spacecraft at event_start_time, range [-180,180]. unit: degree (HEEQ). 
+07: sc_lat_heeq: Heliospheric latitude of the spacecraft at event_start_time, range [-180,180]. unit: degree (HEEQ). 
+08: cme_long_heeq: CME longitude, derived either from SSEF30 modeling with STEREO-A-HI 
+or SWPC CAT with STEREO A: SECCHI/COR2 or SOHO: LASCO/C2, range [-180,180]. unit: degree (HEEQ) 
+09: speed: For in situ observations, the speed over the whole ICME interval (icme_speed_mean in ICMECAT). 
+For HIA, the speed derived from SSEF30 modeling in HIGeoCAT; for DONKI, the speed is determined by linearly fitting position/time plots. unit: km/s. 
+10: mo_bmax: Only for in situ observations, maximum total magnetic field in the magnetic obstacle interval (mo_start_time to mo_end_time). unit: nT. 
+11: mo_bzmin: Only for in situ observations, minimum magnetic field Bz component in the magnetic obstacle. unit: nT (RTN). 
+12: id: the id from either the ICMECAT, HIGeoCAT or DONKI, allowing to look up the event directly in these other catalogs. 
+13: source: Solar source region as given in DONKI.
