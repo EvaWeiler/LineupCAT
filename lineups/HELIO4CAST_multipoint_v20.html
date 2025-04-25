@@ -1,4 +1,4 @@
-<p>HELIO4CAST&nbsp;LineupCAT&nbsp;v2.0&nbsp;<br><br>This&nbsp;is&nbsp;the&nbsp;HELIO4CAST&nbsp;lineup&nbsp;catalog.&nbsp;<br>This&nbsp;is&nbsp;version&nbsp;2.0,&nbsp;released&nbsp;2024-May-7.&nbsp;doi:&nbsp;10.6084/m9.figshare.15134745&nbsp;<br><br>Rules:&nbsp;If&nbsp;results&nbsp;are&nbsp;produced&nbsp;with&nbsp;this&nbsp;catalog&nbsp;for&nbsp;peer-reviewed&nbsp;scientific&nbsp;publications,<br>please&nbsp;contact&nbsp;chris.moestl@outlook.com&nbsp;,&nbsp;eva.weiler@geosphere.at&nbsp;and&nbsp;emma.davies@geosphere.at&nbsp;for&nbsp;possible&nbsp;co-authorships.&nbsp;<br>The&nbsp;reference&nbsp;for&nbsp;this&nbsp;catalog&nbsp;is&nbsp;Moestl&nbsp;et&nbsp;al.&nbsp;2022&nbsp;ApJL&nbsp;doi:10.3847/2041-8213/ac42d0.&nbsp;<br><br>The&nbsp;catalog&nbsp;is&nbsp;available&nbsp;as&nbsp;a&nbsp;python&nbsp;pandas&nbsp;dataframe&nbsp;(pickle),&nbsp;json,&nbsp;csv,&nbsp;xlsx,&nbsp;txt,&nbsp;at&nbsp;<br>https://helioforecast.space/lineups&nbsp;and&nbsp;https://doi.org/10.6084/m9.figshare.15134745.&nbsp;<br><br>Number&nbsp;of&nbsp;events:&nbsp;116<br>ICME&nbsp;observatories:&nbsp;Solar&nbsp;Orbiter,&nbsp;Parker&nbsp;Solar&nbsp;Probe&nbsp;(PSP),&nbsp;BepiColombo,&nbsp;Wind,&nbsp;STEREO-A.&nbsp;&nbsp;&nbsp;<br>Time&nbsp;range:&nbsp;April&nbsp;2020&nbsp;-&nbsp;April&nbsp;2024.&nbsp;<br><br>Authors:&nbsp;Eva&nbsp;Weiler,&nbsp;Christian&nbsp;Möstl,&nbsp;Emma&nbsp;E.&nbsp;Davies,&nbsp;Austrian&nbsp;Space&nbsp;Weather&nbsp;Office,&nbsp;GeoSphere&nbsp;Austria,&nbsp;Graz,&nbsp;Austria.&nbsp;<br>Contributors,&nbsp;Andreas&nbsp;J.&nbsp;Weiss,&nbsp;Rachel&nbsp;L.&nbsp;Bailey,&nbsp;Martin&nbsp;A.&nbsp;Reiss,&nbsp;D.&nbsp;Barnes,&nbsp;J.&nbsp;A.&nbsp;Davies,&nbsp;R.&nbsp;A.&nbsp;Harrison.&nbsp;<br><br>The&nbsp;python&nbsp;source&nbsp;code&nbsp;for&nbsp;producing&nbsp;this&nbsp;catalog&nbsp;is&nbsp;available&nbsp;at&nbsp;https://github.com/EvaWeiler/LineupCAT&nbsp;lineupcat.ipynb<br><br>Each&nbsp;event&nbsp;has&nbsp;unique&nbsp;identifier&nbsp;either&nbsp;from&nbsp;the&nbsp;HELIO4CAST&nbsp;ICMECAT,&nbsp;the&nbsp;HELCATS&nbsp;HIGeoCAT&nbsp;or&nbsp;the&nbsp;DONKI&nbsp;database.&nbsp;<br><br>Comments:<br><br>-&nbsp;Spacecraft&nbsp;positions&nbsp;are&nbsp;given&nbsp;in&nbsp;Heliocentric&nbsp;Earth&nbsp;Equatorial&nbsp;Coordinates&nbsp;(HEEQ)&nbsp;coordinates.</p><p>Parameters: <br>01: event: To which multipoint event the row belongs to, unit: integer. <br>02: lineupcat_id: Observations that are assigned to the same ICME are given the same ID. unit: string. <br>03: event_start_time: For in situ spacecraft, similar to icme_start_time in the ICMECAT. For STEREO-A-HI (HIA),<br>its the see_launch_time from HIGeoCAT, for DONKI its time21_5 from the DONKI database. unit: UTC. <br>04: spacecraft: HIA if the entry refers to observations from STEREO-A-HI; <br>STEREO A: SECCHI/COR2, SOHO: LASCO/C2 if the entry refers to coronagraph observations by either STEREO-A or SOHO; <br>otherwise the in situ observing spacecraft. unit: string. <br>05: sc_heliodistance: Heliocentric distance of the spacecraft at event_start_time. unit: AU. <br>06: sc_long_heeq: Heliospheric longitude of the spacecraft at event_start_time, range [-180,180]. unit: degree (HEEQ). <br>07: sc_lat_heeq: Heliospheric latitude of the spacecraft at event_start_time, range [-180,180]. unit: degree (HEEQ). <br>08: cme_long_heeq: CME longitude, derived either from SSEF30 modeling with STEREO-A-HI <br>or SWPC CAT with STEREO A: SECCHI/COR2 or SOHO: LASCO/C2, range [-180,180]. unit: degree (HEEQ) <br>09: speed: For in situ observations, the speed over the whole ICME interval (icme_speed_mean in ICMECAT). <br>For HIA, the speed derived from SSEF30 modeling in HIGeoCAT; for DONKI, the speed is determined by linearly fitting position/time plots. unit: km/s. <br>10: mo_bmax: Only for in situ observations, maximum total magnetic field in the magnetic obstacle interval (mo_start_time to mo_end_time). unit: nT. <br>11: mo_bzmin: Only for in situ observations, minimum magnetic field Bz component in the magnetic obstacle. unit: nT (RTN). <br>12: id: the id from either the ICMECAT, HIGeoCAT or DONKI, allowing to look up the event directly in these other catalogs. <br>13: source: Solar source region as given in DONKI.</p><table border="1" class="dataframe">
+<p>HELIO4CAST&nbsp;LineupCAT&nbsp;v3.0&nbsp;<br><br>This&nbsp;is&nbsp;the&nbsp;HELIO4CAST&nbsp;lineup&nbsp;catalog.&nbsp;<br>This&nbsp;is&nbsp;version&nbsp;3.0,&nbsp;released&nbsp;2024-May-7,&nbsp;updated&nbsp;2025-Apr-25.&nbsp;doi:&nbsp;10.6084/m9.figshare.15134745&nbsp;<br><br>Rules:&nbsp;If&nbsp;results&nbsp;are&nbsp;produced&nbsp;with&nbsp;this&nbsp;catalog&nbsp;for&nbsp;peer-reviewed&nbsp;scientific&nbsp;publications,<br>please&nbsp;contact&nbsp;chris.moestl@outlook.com&nbsp;,&nbsp;eva.weiler@geosphere.at&nbsp;and&nbsp;emma.davies@geosphere.at&nbsp;for&nbsp;possible&nbsp;co-authorships.&nbsp;<br>The&nbsp;reference&nbsp;for&nbsp;this&nbsp;catalog&nbsp;is&nbsp;Moestl&nbsp;et&nbsp;al.&nbsp;2022&nbsp;ApJL&nbsp;doi:10.3847/2041-8213/ac42d0.&nbsp;<br><br>The&nbsp;catalog&nbsp;is&nbsp;available&nbsp;as&nbsp;a&nbsp;python&nbsp;pandas&nbsp;dataframe&nbsp;(pickle),&nbsp;json,&nbsp;csv,&nbsp;xlsx,&nbsp;txt,&nbsp;at&nbsp;<br>https://helioforecast.space/lineups&nbsp;and&nbsp;https://doi.org/10.6084/m9.figshare.15134745.&nbsp;<br><br>Number&nbsp;of&nbsp;events:&nbsp;147<br>ICME&nbsp;observatories:&nbsp;Solar&nbsp;Orbiter,&nbsp;Parker&nbsp;Solar&nbsp;Probe&nbsp;(PSP),&nbsp;BepiColombo,&nbsp;Wind,&nbsp;STEREO-A.&nbsp;&nbsp;&nbsp;<br>Time&nbsp;range:&nbsp;April&nbsp;2020&nbsp;-&nbsp;December&nbsp;2024.&nbsp;<br><br>Authors:&nbsp;Eva&nbsp;Weiler,&nbsp;Christian&nbsp;Möstl,&nbsp;Emma&nbsp;E.&nbsp;Davies,&nbsp;Austrian&nbsp;Space&nbsp;Weather&nbsp;Office,&nbsp;GeoSphere&nbsp;Austria,&nbsp;Graz,&nbsp;Austria.&nbsp;<br>Contributors,&nbsp;Andreas&nbsp;J.&nbsp;Weiss,&nbsp;Rachel&nbsp;L.&nbsp;Bailey,&nbsp;Martin&nbsp;A.&nbsp;Reiss,&nbsp;D.&nbsp;Barnes,&nbsp;J.&nbsp;A.&nbsp;Davies,&nbsp;R.&nbsp;A.&nbsp;Harrison.&nbsp;<br><br>The&nbsp;python&nbsp;source&nbsp;code&nbsp;for&nbsp;producing&nbsp;this&nbsp;catalog&nbsp;is&nbsp;available&nbsp;at&nbsp;https://github.com/EvaWeiler/LineupCAT&nbsp;lineupcat.ipynb<br><br>Each&nbsp;event&nbsp;has&nbsp;unique&nbsp;identifier&nbsp;either&nbsp;from&nbsp;the&nbsp;HELIO4CAST&nbsp;ICMECAT,&nbsp;the&nbsp;HELCATS&nbsp;HIGeoCAT&nbsp;or&nbsp;the&nbsp;DONKI&nbsp;database.&nbsp;<br><br>Comments:<br><br>-&nbsp;Spacecraft&nbsp;positions&nbsp;are&nbsp;given&nbsp;in&nbsp;Heliocentric&nbsp;Earth&nbsp;Equatorial&nbsp;Coordinates&nbsp;(HEEQ)&nbsp;coordinates.</p><p>Parameters: <br>01: event: To which multipoint event the row belongs to, unit: integer. <br>02: lineupcat_id: Observations that are assigned to the same ICME are given the same ID. unit: string. <br>03: event_start_time: For in situ spacecraft, similar to icme_start_time in the ICMECAT. For STEREO-A-HI (HIA),<br>its the see_launch_time from HIGeoCAT, for DONKI its time21_5 from the DONKI database. unit: UTC. <br>04: spacecraft: HIA if the entry refers to observations from STEREO-A-HI; <br>STEREO A: SECCHI/COR2, SOHO: LASCO/C2 if the entry refers to coronagraph observations by either STEREO-A or SOHO; <br>otherwise the in situ observing spacecraft. unit: string. <br>05: sc_heliodistance: Heliocentric distance of the spacecraft at event_start_time. unit: AU. <br>06: sc_long_heeq: Heliospheric longitude of the spacecraft at event_start_time, range [-180,180]. unit: degree (HEEQ). <br>07: sc_lat_heeq: Heliospheric latitude of the spacecraft at event_start_time, range [-180,180]. unit: degree (HEEQ). <br>08: cme_long_heeq: CME longitude, derived either from SSEF30 modeling with STEREO-A-HI <br>or SWPC CAT with STEREO A: SECCHI/COR2 or SOHO: LASCO/C2, range [-180,180]. unit: degree (HEEQ) <br>09: speed: For in situ observations, the speed over the whole ICME interval (icme_speed_mean in ICMECAT). <br>For HIA, the speed derived from SSEF30 modeling in HIGeoCAT; for DONKI, the speed is determined by linearly fitting position/time plots. unit: km/s. <br>10: mo_bmax: Only for in situ observations, maximum total magnetic field in the magnetic obstacle interval (mo_start_time to mo_end_time). unit: nT. <br>11: mo_bzmin: Only for in situ observations, minimum magnetic field Bz component in the magnetic obstacle. unit: nT (RTN). <br>12: catalog_id: the id from either the ICMECAT, HIGeoCAT or DONKI, allowing to look up the event directly in these other catalogs. <br>13: source: Solar source region as given in DONKI.</p><table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -21,6 +21,998 @@
     <tr>
       <th>0</th>
       <td>1</td>
+      <td>MULTI_2024-12-15_01</td>
+      <td>2024-12-17T04:28Z</td>
+      <td>Wind</td>
+      <td>0.973</td>
+      <td>-0.1</td>
+      <td>-1.2</td>
+      <td>-</td>
+      <td>622</td>
+      <td>32.0</td>
+      <td>-18.2</td>
+      <td>ICME_Wind_MOESTL_20241217_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>MULTI_2024-12-15_01</td>
+      <td>2024-12-15T07:28Z</td>
+      <td>HIA</td>
+      <td>0.967</td>
+      <td>28.4</td>
+      <td>-4.4</td>
+      <td>-17</td>
+      <td>840</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20241215_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>MULTI_2024-11-07_02</td>
+      <td>2024-11-07T12:55Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.708</td>
+      <td>-5.9</td>
+      <td>7.4</td>
+      <td>-</td>
+      <td>385</td>
+      <td>29.2</td>
+      <td>-22.9</td>
+      <td>ICME_SOLO_MOESTL_20241107_02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>MULTI_2024-11-07_02</td>
+      <td>2024-11-08T22:00Z</td>
+      <td>Wind</td>
+      <td>0.982</td>
+      <td>-0.2</td>
+      <td>3.6</td>
+      <td>-</td>
+      <td>398</td>
+      <td>16.0</td>
+      <td>-14.6</td>
+      <td>ICME_Wind_MOESTL_20241108_02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3</td>
+      <td>MULTI_2024-11-07_01</td>
+      <td>2024-11-07T03:42Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.705</td>
+      <td>-6.0</td>
+      <td>7.4</td>
+      <td>-</td>
+      <td>342</td>
+      <td>24.4</td>
+      <td>-22.9</td>
+      <td>ICME_SOLO_MOESTL_20241107_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>3</td>
+      <td>MULTI_2024-11-07_01</td>
+      <td>2024-11-08T09:56Z</td>
+      <td>Wind</td>
+      <td>0.982</td>
+      <td>-0.2</td>
+      <td>3.6</td>
+      <td>-</td>
+      <td>375</td>
+      <td>17.1</td>
+      <td>-14.4</td>
+      <td>ICME_Wind_MOESTL_20241108_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>4</td>
+      <td>MULTI_2024-10-11_01</td>
+      <td>2024-10-11T21:28Z</td>
+      <td>HIA</td>
+      <td>0.964</td>
+      <td>26.7</td>
+      <td>3.6</td>
+      <td>-31</td>
+      <td>696</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20241011_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>4</td>
+      <td>MULTI_2024-10-11_01</td>
+      <td>2024-10-12T22:32Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.395</td>
+      <td>-39.4</td>
+      <td>6.5</td>
+      <td>-</td>
+      <td>365</td>
+      <td>51.4</td>
+      <td>-42.8</td>
+      <td>ICME_SOLO_MOESTL_20241012_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>5</td>
+      <td>MULTI_2024-10-09_01</td>
+      <td>2024-10-09T03:28Z</td>
+      <td>HIA</td>
+      <td>0.963</td>
+      <td>26.5</td>
+      <td>3.9</td>
+      <td>-42</td>
+      <td>927</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20241009_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>5</td>
+      <td>MULTI_2024-10-09_01</td>
+      <td>2024-10-09T15:08Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.353</td>
+      <td>-51.9</td>
+      <td>4.9</td>
+      <td>-</td>
+      <td>735</td>
+      <td>164.8</td>
+      <td>-10.0</td>
+      <td>ICME_SOLO_MOESTL_20241009_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>6</td>
+      <td>MULTI_2024-10-08_01</td>
+      <td>2024-10-10T14:58Z</td>
+      <td>Wind</td>
+      <td>0.990</td>
+      <td>-0.1</td>
+      <td>6.1</td>
+      <td>-</td>
+      <td>692</td>
+      <td>47.8</td>
+      <td>-47.3</td>
+      <td>ICME_Wind_MOESTL_20241010_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>6</td>
+      <td>MULTI_2024-10-08_01</td>
+      <td>2024-10-08T02:08Z</td>
+      <td>HIA</td>
+      <td>0.963</td>
+      <td>26.5</td>
+      <td>4.1</td>
+      <td>8</td>
+      <td>599</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20241008_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>7</td>
+      <td>MULTI_2024-10-03_01</td>
+      <td>2024-10-04T04:20Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.303</td>
+      <td>-80.3</td>
+      <td>0.6</td>
+      <td>-</td>
+      <td>774</td>
+      <td>176.1</td>
+      <td>-163.5</td>
+      <td>ICME_SOLO_MOESTL_20241004_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>7</td>
+      <td>MULTI_2024-10-03_01</td>
+      <td>2024-10-04T00:17Z</td>
+      <td>PSP</td>
+      <td>0.211</td>
+      <td>-95.6</td>
+      <td>1.4</td>
+      <td>-</td>
+      <td>453</td>
+      <td>135.4</td>
+      <td>-67.0</td>
+      <td>ICME_PSP_MOESTL_20241004_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>7</td>
+      <td>MULTI_2024-10-03_01</td>
+      <td>2024-10-03T11:01Z</td>
+      <td>HIA</td>
+      <td>0.963</td>
+      <td>26.3</td>
+      <td>4.6</td>
+      <td>-89</td>
+      <td>814</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20241003_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>8</td>
+      <td>MULTI_2024-09-30_01</td>
+      <td>2024-09-30T20:36Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.293</td>
+      <td>-101.5</td>
+      <td>-2.8</td>
+      <td>-</td>
+      <td>430</td>
+      <td>102.6</td>
+      <td>-73.0</td>
+      <td>ICME_SOLO_MOESTL_20240930_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>8</td>
+      <td>MULTI_2024-09-30_01</td>
+      <td>2024-09-30T07:28Z</td>
+      <td>HIA</td>
+      <td>0.962</td>
+      <td>26.1</td>
+      <td>4.9</td>
+      <td>-93</td>
+      <td>435</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20240930_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>9</td>
+      <td>MULTI_2024-09-15_01</td>
+      <td>2024-09-15T14:32Z</td>
+      <td>PSP</td>
+      <td>0.487</td>
+      <td>-1.8</td>
+      <td>3.8</td>
+      <td>-</td>
+      <td>597</td>
+      <td>40.2</td>
+      <td>-25.4</td>
+      <td>ICME_PSP_MOESTL_20240915_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>9</td>
+      <td>MULTI_2024-09-15_01</td>
+      <td>2024-09-16T22:56Z</td>
+      <td>Wind</td>
+      <td>0.997</td>
+      <td>0.1</td>
+      <td>7.1</td>
+      <td>-</td>
+      <td>539</td>
+      <td>19.7</td>
+      <td>-18.3</td>
+      <td>ICME_Wind_MOESTL_20240916_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>10</td>
+      <td>MULTI_2024-09-11_01</td>
+      <td>2024-09-11T01:46Z</td>
+      <td>PSP</td>
+      <td>0.563</td>
+      <td>-2.4</td>
+      <td>3.9</td>
+      <td>-</td>
+      <td>581</td>
+      <td>43.9</td>
+      <td>-25.5</td>
+      <td>ICME_PSP_MOESTL_20240911_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>10</td>
+      <td>MULTI_2024-09-11_01</td>
+      <td>2024-09-12T08:28Z</td>
+      <td>Wind</td>
+      <td>0.998</td>
+      <td>0.2</td>
+      <td>7.2</td>
+      <td>-</td>
+      <td>520</td>
+      <td>29.7</td>
+      <td>-22.0</td>
+      <td>ICME_Wind_MOESTL_20240912_02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>11</td>
+      <td>MULTI_2024-08-26_01</td>
+      <td>2024-08-27T07:30Z</td>
+      <td>Wind</td>
+      <td>1.001</td>
+      <td>0.2</td>
+      <td>7.1</td>
+      <td>-</td>
+      <td>311</td>
+      <td>18.1</td>
+      <td>-15.0</td>
+      <td>ICME_Wind_MOESTL_20240827_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>11</td>
+      <td>MULTI_2024-08-26_01</td>
+      <td>2024-08-26T02:34Z</td>
+      <td>PSP</td>
+      <td>0.715</td>
+      <td>1.2</td>
+      <td>3.8</td>
+      <td>-</td>
+      <td>316</td>
+      <td>30.0</td>
+      <td>-27.6</td>
+      <td>ICME_PSP_MOESTL_20240826_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>12</td>
+      <td>MULTI_2024-08-14_01</td>
+      <td>2024-08-17T13:34Z</td>
+      <td>Wind</td>
+      <td>1.003</td>
+      <td>0.2</td>
+      <td>6.8</td>
+      <td>-</td>
+      <td>449</td>
+      <td>17.4</td>
+      <td>-4.2</td>
+      <td>ICME_Wind_MOESTL_20240817_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>12</td>
+      <td>MULTI_2024-08-14_01</td>
+      <td>2024-08-14T13:53Z</td>
+      <td>STEREO A: SECCHI/COR2</td>
+      <td>0.957</td>
+      <td>22.5</td>
+      <td>7.3</td>
+      <td>-4.0</td>
+      <td>616</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2024-08-14T08:23:00-CME-001</td>
+      <td>N14E03</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>12</td>
+      <td>MULTI_2024-08-14_01</td>
+      <td>2024-08-14T12:48Z</td>
+      <td>HIA</td>
+      <td>0.957</td>
+      <td>22.5</td>
+      <td>7.3</td>
+      <td>-4</td>
+      <td>477</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20240814_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>13</td>
+      <td>MULTI_2024-08-11_01</td>
+      <td>2024-08-10T12:02Z</td>
+      <td>Wind</td>
+      <td>1.003</td>
+      <td>0.2</td>
+      <td>6.5</td>
+      <td>-</td>
+      <td>458</td>
+      <td>22.1</td>
+      <td>-20.2</td>
+      <td>ICME_Wind_MOESTL_20240810_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>13</td>
+      <td>MULTI_2024-08-11_01</td>
+      <td>2024-08-11T20:50Z</td>
+      <td>PSP</td>
+      <td>0.742</td>
+      <td>7.0</td>
+      <td>3.6</td>
+      <td>-</td>
+      <td>438</td>
+      <td>33.5</td>
+      <td>3.1</td>
+      <td>ICME_PSP_MOESTL_20240811_02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>13</td>
+      <td>MULTI_2024-08-11_01</td>
+      <td>2024-08-11T10:36Z</td>
+      <td>PSP</td>
+      <td>0.742</td>
+      <td>7.2</td>
+      <td>3.6</td>
+      <td>-</td>
+      <td>482</td>
+      <td>32.6</td>
+      <td>-25.2</td>
+      <td>ICME_PSP_MOESTL_20240811_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>14</td>
+      <td>MULTI_2024-07-27_01</td>
+      <td>2024-07-27T06:48Z</td>
+      <td>HIA</td>
+      <td>0.956</td>
+      <td>20.6</td>
+      <td>6.9</td>
+      <td>4</td>
+      <td>598</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20240727_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>14</td>
+      <td>MULTI_2024-07-27_01</td>
+      <td>2024-07-29T01:01Z</td>
+      <td>PSP</td>
+      <td>0.676</td>
+      <td>11.8</td>
+      <td>3.4</td>
+      <td>-</td>
+      <td>452</td>
+      <td>26.7</td>
+      <td>-17.4</td>
+      <td>ICME_PSP_MOESTL_20240729_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>15</td>
+      <td>MULTI_2024-07-21_01</td>
+      <td>2024-07-21T18:48Z</td>
+      <td>HIA</td>
+      <td>0.955</td>
+      <td>20.0</td>
+      <td>6.6</td>
+      <td>-22</td>
+      <td>1553</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20240721_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>15</td>
+      <td>MULTI_2024-07-21_01</td>
+      <td>2024-07-23T19:48Z</td>
+      <td>Wind</td>
+      <td>1.005</td>
+      <td>0.2</td>
+      <td>5.2</td>
+      <td>-</td>
+      <td>320</td>
+      <td>19.2</td>
+      <td>-4.6</td>
+      <td>ICME_Wind_MOESTL_20240723_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>15</td>
+      <td>MULTI_2024-07-21_01</td>
+      <td>2024-07-21T21:39Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>1.007</td>
+      <td>-0.3</td>
+      <td>5.0</td>
+      <td>-20.0</td>
+      <td>719</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2024-07-21T16:48:00-CME-001</td>
+      <td>N15E20</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>16</td>
+      <td>MULTI_2024-06-17_01</td>
+      <td>2024-06-19T23:40Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.940</td>
+      <td>167.5</td>
+      <td>4.1</td>
+      <td>-</td>
+      <td>555</td>
+      <td>18.9</td>
+      <td>-7.2</td>
+      <td>ICME_SOLO_MOESTL_20240619_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>16</td>
+      <td>MULTI_2024-06-17_01</td>
+      <td>2024-06-17T11:54Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>1.007</td>
+      <td>-0.1</td>
+      <td>1.4</td>
+      <td>-151.0</td>
+      <td>902</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2024-06-17T08:24:00-CME-001</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>16</td>
+      <td>MULTI_2024-06-17_01</td>
+      <td>2024-06-17T10:48Z</td>
+      <td>HIA</td>
+      <td>0.954</td>
+      <td>16.2</td>
+      <td>3.4</td>
+      <td>-160</td>
+      <td>1351</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20240617_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>17</td>
+      <td>MULTI_2024-06-13_01</td>
+      <td>2024-06-15T10:54Z</td>
+      <td>Wind</td>
+      <td>1.005</td>
+      <td>-0.2</td>
+      <td>1.1</td>
+      <td>-</td>
+      <td>396</td>
+      <td>13.1</td>
+      <td>-10.0</td>
+      <td>ICME_Wind_MOESTL_20240615_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>17</td>
+      <td>MULTI_2024-06-13_01</td>
+      <td>2024-06-13T00:48Z</td>
+      <td>HIA</td>
+      <td>0.955</td>
+      <td>15.8</td>
+      <td>2.9</td>
+      <td>-19</td>
+      <td>797</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20240613_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>18</td>
+      <td>MULTI_2024-05-20_01</td>
+      <td>2024-05-21T08:09Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.796</td>
+      <td>170.3</td>
+      <td>6.6</td>
+      <td>-</td>
+      <td>748</td>
+      <td>38.6</td>
+      <td>-24.6</td>
+      <td>ICME_SOLO_MOESTL_20240521_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>18</td>
+      <td>MULTI_2024-05-20_01</td>
+      <td>2024-05-20T06:40Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>1.003</td>
+      <td>0.2</td>
+      <td>-2.0</td>
+      <td>172.0</td>
+      <td>2678</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2024-05-20T05:36:00-CME-001</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>18</td>
+      <td>MULTI_2024-05-20_01</td>
+      <td>2024-05-20T08:08Z</td>
+      <td>HIA</td>
+      <td>0.956</td>
+      <td>13.4</td>
+      <td>-0.3</td>
+      <td>-156</td>
+      <td>848</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20240520_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>19</td>
+      <td>MULTI_2024-05-11_01</td>
+      <td>2024-05-11T05:36Z</td>
+      <td>STEREO-A</td>
+      <td>0.956</td>
+      <td>12.6</td>
+      <td>-1.5</td>
+      <td>-</td>
+      <td>-</td>
+      <td>32.5</td>
+      <td>-29.8</td>
+      <td>ICME_STEREO_A_MOESTL_20240511_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>19</td>
+      <td>MULTI_2024-05-11_01</td>
+      <td>2024-05-11T10:41Z</td>
+      <td>Wind</td>
+      <td>1.001</td>
+      <td>-0.2</td>
+      <td>-3.1</td>
+      <td>-</td>
+      <td>794</td>
+      <td>28.6</td>
+      <td>-25.0</td>
+      <td>ICME_Wind_MOESTL_20240511_03</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>20</td>
+      <td>MULTI_2024-05-10_03</td>
+      <td>2024-05-10T21:41Z</td>
+      <td>STEREO-A</td>
+      <td>0.956</td>
+      <td>12.6</td>
+      <td>-1.5</td>
+      <td>-</td>
+      <td>-</td>
+      <td>66.5</td>
+      <td>-59.3</td>
+      <td>ICME_STEREO_A_MOESTL_20240510_03</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>20</td>
+      <td>MULTI_2024-05-10_03</td>
+      <td>2024-05-11T00:02Z</td>
+      <td>Wind</td>
+      <td>1.001</td>
+      <td>-0.2</td>
+      <td>-3.1</td>
+      <td>-</td>
+      <td>720</td>
+      <td>44.6</td>
+      <td>-39.7</td>
+      <td>ICME_Wind_MOESTL_20240511_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>21</td>
+      <td>MULTI_2024-05-10_02</td>
+      <td>2024-05-10T21:39Z</td>
+      <td>Wind</td>
+      <td>1.001</td>
+      <td>-0.2</td>
+      <td>-3.1</td>
+      <td>-</td>
+      <td>744</td>
+      <td>71.9</td>
+      <td>-58.5</td>
+      <td>ICME_Wind_MOESTL_20240510_02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>21</td>
+      <td>MULTI_2024-05-10_02</td>
+      <td>2024-05-10T18:14Z</td>
+      <td>STEREO-A</td>
+      <td>0.956</td>
+      <td>12.6</td>
+      <td>-1.5</td>
+      <td>-</td>
+      <td>-</td>
+      <td>84.0</td>
+      <td>-61.4</td>
+      <td>ICME_STEREO_A_MOESTL_20240510_02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>22</td>
+      <td>MULTI_2024-05-10_01</td>
+      <td>2024-05-10T16:37Z</td>
+      <td>Wind</td>
+      <td>1.001</td>
+      <td>-0.2</td>
+      <td>-3.1</td>
+      <td>-</td>
+      <td>694</td>
+      <td>71.9</td>
+      <td>-39.1</td>
+      <td>ICME_Wind_MOESTL_20240510_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>22</td>
+      <td>MULTI_2024-05-10_01</td>
+      <td>2024-05-10T14:03Z</td>
+      <td>STEREO-A</td>
+      <td>0.956</td>
+      <td>12.6</td>
+      <td>-1.6</td>
+      <td>-</td>
+      <td>-</td>
+      <td>81.6</td>
+      <td>-74.7</td>
+      <td>ICME_STEREO_A_MOESTL_20240510_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>23</td>
+      <td>MULTI_2024-04-29_01</td>
+      <td>2024-04-30T11:46Z</td>
+      <td>Wind</td>
+      <td>0.999</td>
+      <td>-0.2</td>
+      <td>-4.2</td>
+      <td>-</td>
+      <td>378</td>
+      <td>13.6</td>
+      <td>-8.6</td>
+      <td>ICME_Wind_MOESTL_20240430_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>23</td>
+      <td>MULTI_2024-04-29_01</td>
+      <td>2024-04-29T21:21Z</td>
+      <td>STEREO-A</td>
+      <td>0.958</td>
+      <td>11.6</td>
+      <td>-3.0</td>
+      <td>-</td>
+      <td>402</td>
+      <td>66.7</td>
+      <td>-59.1</td>
+      <td>ICME_STEREO_A_MOESTL_20240429_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>24</td>
+      <td>MULTI_2024-03-23_01</td>
+      <td>2024-03-24T14:23Z</td>
+      <td>STEREO-A</td>
+      <td>0.962</td>
+      <td>9.3</td>
+      <td>-6.4</td>
+      <td>-</td>
+      <td>661</td>
+      <td>29.2</td>
+      <td>-17.8</td>
+      <td>ICME_STEREO_A_MOESTL_20240324_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>24</td>
+      <td>MULTI_2024-03-23_01</td>
+      <td>2024-03-24T14:14Z</td>
+      <td>Wind</td>
+      <td>0.989</td>
+      <td>0.1</td>
+      <td>-6.9</td>
+      <td>-</td>
+      <td>778</td>
+      <td>31.2</td>
+      <td>-5.3</td>
+      <td>ICME_Wind_MOESTL_20240324_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>24</td>
+      <td>MULTI_2024-03-23_01</td>
+      <td>2024-03-23T13:32Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.386</td>
+      <td>9.8</td>
+      <td>-8.0</td>
+      <td>-</td>
+      <td>838</td>
+      <td>128.4</td>
+      <td>-43.9</td>
+      <td>ICME_SOLO_MOESTL_20240323_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>25</td>
+      <td>MULTI_2024-03-18_01</td>
+      <td>2024-03-18T16:56Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.448</td>
+      <td>-3.5</td>
+      <td>-7.4</td>
+      <td>-</td>
+      <td>357</td>
+      <td>52.2</td>
+      <td>-47.6</td>
+      <td>ICME_SOLO_MOESTL_20240318_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>25</td>
+      <td>MULTI_2024-03-18_01</td>
+      <td>2024-03-21T02:02Z</td>
+      <td>Wind</td>
+      <td>0.988</td>
+      <td>0.1</td>
+      <td>-7.0</td>
+      <td>-</td>
+      <td>358</td>
+      <td>12.3</td>
+      <td>-10.8</td>
+      <td>ICME_Wind_MOESTL_20240321_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>26</td>
+      <td>MULTI_2024-03-03_01</td>
+      <td>2024-03-03T06:00Z</td>
+      <td>STEREO-A</td>
+      <td>0.964</td>
+      <td>8.3</td>
+      <td>-7.3</td>
+      <td>-</td>
+      <td>351</td>
+      <td>18.1</td>
+      <td>-15.6</td>
+      <td>ICME_STEREO_A_MOESTL_20240303_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>26</td>
+      <td>MULTI_2024-03-03_01</td>
+      <td>2024-03-03T09:06Z</td>
+      <td>Wind</td>
+      <td>0.983</td>
+      <td>0.2</td>
+      <td>-7.2</td>
+      <td>-</td>
+      <td>352</td>
+      <td>14.1</td>
+      <td>-10.0</td>
+      <td>ICME_Wind_MOESTL_20240303_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>26</td>
+      <td>MULTI_2024-03-03_01</td>
+      <td>2024-03-03T17:28Z</td>
+      <td>STEREO-A</td>
+      <td>0.964</td>
+      <td>8.3</td>
+      <td>-7.3</td>
+      <td>-</td>
+      <td>373</td>
+      <td>18.3</td>
+      <td>-13.1</td>
+      <td>ICME_STEREO_A_MOESTL_20240303_02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>27</td>
+      <td>MULTI_2024-02-28_01</td>
+      <td>2024-02-28T13:06Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>0.980</td>
+      <td>-0.1</td>
+      <td>-7.2</td>
+      <td>-31.0</td>
+      <td>867</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2024-02-28T09:24:00-CME-001</td>
+      <td>S16E30</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>27</td>
+      <td>MULTI_2024-02-28_01</td>
+      <td>2024-02-28T12:08Z</td>
+      <td>HIA</td>
+      <td>0.965</td>
+      <td>8.2</td>
+      <td>-7.3</td>
+      <td>-78</td>
+      <td>829</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20240228_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>28</td>
       <td>MULTI_2024-02-21_01</td>
       <td>2024-02-25T13:27Z</td>
       <td>STEREO-A</td>
@@ -28,15 +1020,15 @@
       <td>8.1</td>
       <td>-7.3</td>
       <td>-</td>
-      <td>384</td>
+      <td>386</td>
       <td>15.2</td>
-      <td>3.6</td>
+      <td>3.8</td>
       <td>ICME_STEREO_A_MOESTL_20240225_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>1</td>
+      <th>63</th>
+      <td>28</td>
       <td>MULTI_2024-02-21_01</td>
       <td>2024-02-24T16:24Z</td>
       <td>Wind</td>
@@ -51,8 +1043,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>1</td>
+      <th>64</th>
+      <td>28</td>
       <td>MULTI_2024-02-21_01</td>
       <td>2024-02-22T01:00Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -67,8 +1059,104 @@
       <td>N05W40</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>2</td>
+      <th>65</th>
+      <td>29</td>
+      <td>MULTI_2024-02-06_01</td>
+      <td>2024-02-08T04:26Z</td>
+      <td>PSP</td>
+      <td>0.740</td>
+      <td>-173.2</td>
+      <td>3.6</td>
+      <td>-</td>
+      <td>547</td>
+      <td>43.6</td>
+      <td>-39.0</td>
+      <td>ICME_PSP_MOESTL_20240208_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>29</td>
+      <td>MULTI_2024-02-06_01</td>
+      <td>2024-02-06T14:15Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>0.976</td>
+      <td>-0.2</td>
+      <td>-6.4</td>
+      <td>-177.0</td>
+      <td>1479</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2024-02-06T12:00:00-CME-001</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>29</td>
+      <td>MULTI_2024-02-06_01</td>
+      <td>2024-02-06T14:08Z</td>
+      <td>HIA</td>
+      <td>0.966</td>
+      <td>7.5</td>
+      <td>-6.9</td>
+      <td>-167</td>
+      <td>1527</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20240206_02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>30</td>
+      <td>MULTI_2024-01-20_01</td>
+      <td>2024-01-21T23:11Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.930</td>
+      <td>-23.0</td>
+      <td>1.3</td>
+      <td>-</td>
+      <td>-</td>
+      <td>51.7</td>
+      <td>-23.7</td>
+      <td>ICME_SOLO_MOESTL_20240121_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>30</td>
+      <td>MULTI_2024-01-20_01</td>
+      <td>2024-01-20T12:06Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>0.975</td>
+      <td>-0.2</td>
+      <td>-5.0</td>
+      <td>-20.0</td>
+      <td>1088</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2024-01-20T09:24:00-CME-001</td>
+      <td>S15E15</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>30</td>
+      <td>MULTI_2024-01-20_01</td>
+      <td>2024-01-20T10:48Z</td>
+      <td>HIA</td>
+      <td>0.967</td>
+      <td>7.2</td>
+      <td>-5.8</td>
+      <td>-47</td>
+      <td>1167</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20240120_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>31</td>
       <td>MULTI_2023-12-14_01</td>
       <td>2023-12-14T21:28Z</td>
       <td>HIA</td>
@@ -83,24 +1171,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>2</td>
-      <td>MULTI_2023-12-14_01</td>
-      <td>2023-12-17T06:56Z</td>
-      <td>Wind</td>
-      <td>0.974</td>
-      <td>-0.2</td>
-      <td>-1.2</td>
-      <td>-</td>
-      <td>498</td>
-      <td>11.2</td>
-      <td>5.3</td>
-      <td>ICME_Wind_MOESTL_20231217_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2</td>
+      <th>72</th>
+      <td>31</td>
       <td>MULTI_2023-12-14_01</td>
       <td>2023-12-14T20:34Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -115,24 +1187,24 @@
       <td>N05W54</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>3</td>
-      <td>MULTI_2023-12-13_01</td>
-      <td>2023-12-13T04:39Z</td>
-      <td>SOHO: LASCO/C2</td>
-      <td>0.976</td>
-      <td>0.1</td>
-      <td>-0.6</td>
-      <td>17.0</td>
-      <td>696</td>
+      <th>73</th>
+      <td>31</td>
+      <td>MULTI_2023-12-14_01</td>
+      <td>2023-12-17T06:56Z</td>
+      <td>Wind</td>
+      <td>0.974</td>
+      <td>-0.2</td>
+      <td>-1.2</td>
       <td>-</td>
-      <td>-</td>
-      <td>DONKI_2023-12-13T00:00:00-CME-001</td>
-      <td>N06W19</td>
+      <td>498</td>
+      <td>11.2</td>
+      <td>5.3</td>
+      <td>ICME_Wind_MOESTL_20231217_01</td>
+      <td></td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>3</td>
+      <th>74</th>
+      <td>32</td>
       <td>MULTI_2023-12-13_01</td>
       <td>2023-12-15T10:52Z</td>
       <td>Wind</td>
@@ -147,8 +1219,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>3</td>
+      <th>75</th>
+      <td>32</td>
       <td>MULTI_2023-12-13_01</td>
       <td>2023-12-15T12:19Z</td>
       <td>STEREO-A</td>
@@ -156,15 +1228,31 @@
       <td>6.7</td>
       <td>-1.9</td>
       <td>-</td>
-      <td>378</td>
-      <td>15.1</td>
-      <td>-3.6</td>
+      <td>416</td>
+      <td>15.6</td>
+      <td>-3.1</td>
       <td>ICME_STEREO_A_MOESTL_20231215_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>4</td>
+      <th>76</th>
+      <td>32</td>
+      <td>MULTI_2023-12-13_01</td>
+      <td>2023-12-13T04:39Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>0.976</td>
+      <td>0.1</td>
+      <td>-0.6</td>
+      <td>17.0</td>
+      <td>696</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2023-12-13T00:00:00-CME-001</td>
+      <td>N06W19</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>33</td>
       <td>MULTI_2023-12-05_01</td>
       <td>2023-12-11T16:54Z</td>
       <td>SolarOrbiter</td>
@@ -179,8 +1267,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>10</th>
-      <td>4</td>
+      <th>78</th>
+      <td>33</td>
       <td>MULTI_2023-12-05_01</td>
       <td>2023-12-05T23:28Z</td>
       <td>HIA</td>
@@ -195,8 +1283,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>11</th>
-      <td>5</td>
+      <th>79</th>
+      <td>34</td>
       <td>MULTI_2023-12-01_01</td>
       <td>2023-12-01T08:52Z</td>
       <td>Wind</td>
@@ -211,88 +1299,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>12</th>
-      <td>5</td>
+      <th>80</th>
+      <td>34</td>
       <td>MULTI_2023-12-01_01</td>
       <td>2023-12-01T08:24Z</td>
       <td>STEREO-A</td>
       <td>0.967</td>
-      <td>6.5</td>
+      <td>6.4</td>
       <td>-0.1</td>
       <td>-</td>
-      <td>517</td>
-      <td>15.8</td>
-      <td>-11.5</td>
+      <td>468</td>
+      <td>15.6</td>
+      <td>-11.1</td>
       <td>ICME_STEREO_A_MOESTL_20231201_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>13</th>
-      <td>6</td>
-      <td>MULTI_2023-11-09_01</td>
-      <td>2023-11-13T13:42Z</td>
-      <td>STEREO-A</td>
-      <td>0.966</td>
-      <td>6.0</td>
-      <td>2.3</td>
-      <td>-</td>
-      <td>410</td>
-      <td>16.2</td>
-      <td>-7.3</td>
-      <td>ICME_STEREO_A_MOESTL_20231113_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>6</td>
-      <td>MULTI_2023-11-09_01</td>
-      <td>2023-11-13T16:34Z</td>
-      <td>Wind</td>
-      <td>0.981</td>
-      <td>-0.2</td>
-      <td>3.0</td>
-      <td>-</td>
-      <td>398</td>
-      <td>13.2</td>
-      <td>-12.0</td>
-      <td>ICME_Wind_MOESTL_20231113_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>6</td>
-      <td>MULTI_2023-11-09_01</td>
-      <td>2023-11-11T09:14Z</td>
-      <td>SolarOrbiter</td>
-      <td>0.690</td>
-      <td>-12.3</td>
-      <td>7.5</td>
-      <td>-</td>
-      <td>426</td>
-      <td>16.5</td>
-      <td>-6.7</td>
-      <td>ICME_SOLO_MOESTL_20231111_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>6</td>
-      <td>MULTI_2023-11-09_01</td>
-      <td>2023-11-09T16:01Z</td>
-      <td>STEREO A: SECCHI/COR2</td>
-      <td>0.965</td>
-      <td>5.9</td>
-      <td>2.8</td>
-      <td>10.0</td>
-      <td>782</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2023-11-09T12:23:00-CME-001</td>
-      <td>S10W10</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>6</td>
+      <th>81</th>
+      <td>35</td>
       <td>MULTI_2023-11-09_01</td>
       <td>2023-11-09T16:48Z</td>
       <td>HIA</td>
@@ -307,9 +1331,169 @@
       <td></td>
     </tr>
     <tr>
-      <th>18</th>
-      <td>7</td>
+      <th>82</th>
+      <td>35</td>
+      <td>MULTI_2023-11-09_01</td>
+      <td>2023-11-09T16:01Z</td>
+      <td>STEREO A: SECCHI/COR2</td>
+      <td>0.965</td>
+      <td>5.9</td>
+      <td>2.8</td>
+      <td>10.0</td>
+      <td>782</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2023-11-09T12:23:00-CME-001</td>
+      <td>S10W10</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>35</td>
+      <td>MULTI_2023-11-09_01</td>
+      <td>2023-11-13T16:34Z</td>
+      <td>Wind</td>
+      <td>0.981</td>
+      <td>-0.2</td>
+      <td>3.0</td>
+      <td>-</td>
+      <td>398</td>
+      <td>13.2</td>
+      <td>-12.0</td>
+      <td>ICME_Wind_MOESTL_20231113_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>35</td>
+      <td>MULTI_2023-11-09_01</td>
+      <td>2023-11-13T13:42Z</td>
+      <td>STEREO-A</td>
+      <td>0.966</td>
+      <td>6.0</td>
+      <td>2.3</td>
+      <td>-</td>
+      <td>411</td>
+      <td>16.4</td>
+      <td>-6.8</td>
+      <td>ICME_STEREO_A_MOESTL_20231113_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>35</td>
+      <td>MULTI_2023-11-09_01</td>
+      <td>2023-11-11T09:14Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.690</td>
+      <td>-12.3</td>
+      <td>7.5</td>
+      <td>-</td>
+      <td>426</td>
+      <td>16.5</td>
+      <td>-6.7</td>
+      <td>ICME_SOLO_MOESTL_20231111_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>36</td>
+      <td>MULTI_2023-11-05_01</td>
+      <td>2023-11-05T12:29Z</td>
+      <td>STEREO-A</td>
+      <td>0.965</td>
+      <td>5.7</td>
+      <td>3.3</td>
+      <td>-</td>
+      <td>450</td>
+      <td>18.2</td>
+      <td>-8.9</td>
+      <td>ICME_STEREO_A_MOESTL_20231105_02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>36</td>
+      <td>MULTI_2023-11-05_01</td>
+      <td>2023-11-05T11:54Z</td>
+      <td>Wind</td>
+      <td>0.983</td>
+      <td>-0.2</td>
+      <td>4.0</td>
+      <td>-</td>
+      <td>479</td>
+      <td>39.2</td>
+      <td>-30.2</td>
+      <td>ICME_Wind_MOESTL_20231105_02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>36</td>
+      <td>MULTI_2023-11-05_01</td>
+      <td>2023-11-04T10:58Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.604</td>
+      <td>-16.9</td>
+      <td>7.9</td>
+      <td>-</td>
+      <td>-</td>
+      <td>50.6</td>
+      <td>-49.2</td>
+      <td>ICME_SOLO_MOESTL_20231104_02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>37</td>
       <td>MULTI_2023-11-04_01</td>
+      <td>2023-11-05T03:40Z</td>
+      <td>STEREO-A</td>
+      <td>0.965</td>
+      <td>5.7</td>
+      <td>3.4</td>
+      <td>-</td>
+      <td>416</td>
+      <td>22.6</td>
+      <td>-19.6</td>
+      <td>ICME_STEREO_A_MOESTL_20231105_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>37</td>
+      <td>MULTI_2023-11-04_01</td>
+      <td>2023-11-05T08:28Z</td>
+      <td>Wind</td>
+      <td>0.983</td>
+      <td>-0.2</td>
+      <td>4.0</td>
+      <td>-</td>
+      <td>393</td>
+      <td>32.4</td>
+      <td>-30.1</td>
+      <td>ICME_Wind_MOESTL_20231105_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>37</td>
+      <td>MULTI_2023-11-04_01</td>
+      <td>2023-11-04T07:17Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.603</td>
+      <td>-17.0</td>
+      <td>7.9</td>
+      <td>-</td>
+      <td>-</td>
+      <td>82.7</td>
+      <td>4.3</td>
+      <td>ICME_SOLO_MOESTL_20231104_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>38</td>
+      <td>MULTI_2023-11-03_01</td>
       <td>2023-11-04T13:34Z</td>
       <td>Wind</td>
       <td>0.983</td>
@@ -323,56 +1507,40 @@
       <td></td>
     </tr>
     <tr>
-      <th>19</th>
-      <td>7</td>
-      <td>MULTI_2023-11-04_01</td>
+      <th>93</th>
+      <td>38</td>
+      <td>MULTI_2023-11-03_01</td>
       <td>2023-11-04T00:20Z</td>
       <td>STEREO-A</td>
       <td>0.965</td>
       <td>5.7</td>
       <td>3.5</td>
       <td>-</td>
-      <td>362</td>
-      <td>14.3</td>
-      <td>-11.4</td>
+      <td>373</td>
+      <td>14.0</td>
+      <td>-10.4</td>
       <td>ICME_STEREO_A_MOESTL_20231104_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>20</th>
-      <td>8</td>
-      <td>MULTI_2023-10-16_01</td>
-      <td>2023-10-17T10:24Z</td>
+      <th>94</th>
+      <td>38</td>
+      <td>MULTI_2023-11-03_01</td>
+      <td>2023-11-03T22:44Z</td>
       <td>SolarOrbiter</td>
-      <td>0.373</td>
-      <td>-51.2</td>
-      <td>5.8</td>
+      <td>0.600</td>
+      <td>-17.2</td>
+      <td>7.9</td>
       <td>-</td>
-      <td>469</td>
-      <td>60.1</td>
-      <td>-29.4</td>
-      <td>ICME_SOLO_MOESTL_20231017_01</td>
+      <td>-</td>
+      <td>48.3</td>
+      <td>-41.3</td>
+      <td>ICME_SOLO_MOESTL_20231103_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>21</th>
-      <td>8</td>
-      <td>MULTI_2023-10-16_01</td>
-      <td>2023-10-16T17:06Z</td>
-      <td>STEREO A: SECCHI/COR2</td>
-      <td>0.963</td>
-      <td>4.9</td>
-      <td>5.4</td>
-      <td>-45.0</td>
-      <td>720</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2023-10-16T12:09:00-CME-001</td>
-      <td>N13E47</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>8</td>
+      <th>95</th>
+      <td>39</td>
       <td>MULTI_2023-10-16_01</td>
       <td>2023-10-16T15:28Z</td>
       <td>HIA</td>
@@ -387,24 +1555,40 @@
       <td></td>
     </tr>
     <tr>
-      <th>23</th>
-      <td>9</td>
-      <td>MULTI_2023-10-10_01</td>
-      <td>2023-10-10T12:08Z</td>
-      <td>HIA</td>
-      <td>0.962</td>
-      <td>4.6</td>
-      <td>5.9</td>
-      <td>-140</td>
-      <td>1411</td>
+      <th>96</th>
+      <td>39</td>
+      <td>MULTI_2023-10-16_01</td>
+      <td>2023-10-16T17:06Z</td>
+      <td>STEREO A: SECCHI/COR2</td>
+      <td>0.963</td>
+      <td>4.9</td>
+      <td>5.4</td>
+      <td>-45.0</td>
+      <td>720</td>
       <td>-</td>
       <td>-</td>
-      <td>HCME_A__20231010_01</td>
+      <td>DONKI_2023-10-16T12:09:00-CME-001</td>
+      <td>N13E47</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>39</td>
+      <td>MULTI_2023-10-16_01</td>
+      <td>2023-10-17T10:24Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.373</td>
+      <td>-51.2</td>
+      <td>5.8</td>
+      <td>-</td>
+      <td>469</td>
+      <td>60.1</td>
+      <td>-29.4</td>
+      <td>ICME_SOLO_MOESTL_20231017_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>24</th>
-      <td>9</td>
+      <th>98</th>
+      <td>40</td>
       <td>MULTI_2023-10-10_01</td>
       <td>2023-10-10T22:32Z</td>
       <td>SolarOrbiter</td>
@@ -419,8 +1603,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>25</th>
-      <td>9</td>
+      <th>99</th>
+      <td>40</td>
       <td>MULTI_2023-10-10_01</td>
       <td>2023-10-10T13:32Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -435,24 +1619,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>26</th>
-      <td>10</td>
-      <td>MULTI_2023-09-22_02</td>
-      <td>2023-09-24T17:39Z</td>
-      <td>STEREO-A</td>
-      <td>0.961</td>
-      <td>3.7</td>
-      <td>6.9</td>
+      <th>100</th>
+      <td>40</td>
+      <td>MULTI_2023-10-10_01</td>
+      <td>2023-10-10T12:08Z</td>
+      <td>HIA</td>
+      <td>0.962</td>
+      <td>4.6</td>
+      <td>5.9</td>
+      <td>-140</td>
+      <td>1411</td>
       <td>-</td>
-      <td>497</td>
-      <td>33.0</td>
-      <td>-13.2</td>
-      <td>ICME_STEREO_A_MOESTL_20230924_01</td>
+      <td>-</td>
+      <td>HCME_A__20231010_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>27</th>
-      <td>10</td>
+      <th>101</th>
+      <td>41</td>
       <td>MULTI_2023-09-22_02</td>
       <td>2023-09-24T20:02Z</td>
       <td>Wind</td>
@@ -467,8 +1651,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>28</th>
-      <td>10</td>
+      <th>102</th>
+      <td>41</td>
+      <td>MULTI_2023-09-22_02</td>
+      <td>2023-09-24T17:39Z</td>
+      <td>STEREO-A</td>
+      <td>0.961</td>
+      <td>3.6</td>
+      <td>6.9</td>
+      <td>-</td>
+      <td>447</td>
+      <td>33.4</td>
+      <td>-12.2</td>
+      <td>ICME_STEREO_A_MOESTL_20230924_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>41</td>
       <td>MULTI_2023-09-22_02</td>
       <td>2023-09-22T18:15Z</td>
       <td>PSP</td>
@@ -483,8 +1683,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>29</th>
-      <td>10</td>
+      <th>104</th>
+      <td>41</td>
       <td>MULTI_2023-09-22_02</td>
       <td>2023-09-22T05:54Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -499,8 +1699,8 @@
       <td>N17E25</td>
     </tr>
     <tr>
-      <th>30</th>
-      <td>10</td>
+      <th>105</th>
+      <td>41</td>
       <td>MULTI_2023-09-22_02</td>
       <td>2023-09-22T04:48Z</td>
       <td>HIA</td>
@@ -515,8 +1715,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>31</th>
-      <td>11</td>
+      <th>106</th>
+      <td>42</td>
       <td>MULTI_2023-09-19_02</td>
       <td>2023-09-22T03:46Z</td>
       <td>BepiColombo</td>
@@ -526,13 +1726,13 @@
       <td>-</td>
       <td>-</td>
       <td>50.4</td>
-      <td>-26.2</td>
+      <td>-26.4</td>
       <td>ICME_BEPI_MOESTL_20230922_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>32</th>
-      <td>11</td>
+      <th>107</th>
+      <td>42</td>
       <td>MULTI_2023-09-19_02</td>
       <td>2023-09-19T20:48Z</td>
       <td>HIA</td>
@@ -547,8 +1747,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>33</th>
-      <td>12</td>
+      <th>108</th>
+      <td>43</td>
+      <td>MULTI_2023-09-19_01</td>
+      <td>2023-09-19T00:52Z</td>
+      <td>STEREO-A</td>
+      <td>0.960</td>
+      <td>3.2</td>
+      <td>7.1</td>
+      <td>-</td>
+      <td>586</td>
+      <td>13.2</td>
+      <td>-9.3</td>
+      <td>ICME_STEREO_A_MOESTL_20230919_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>43</td>
       <td>MULTI_2023-09-19_01</td>
       <td>2023-09-19T14:30Z</td>
       <td>Wind</td>
@@ -563,24 +1779,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>34</th>
-      <td>12</td>
-      <td>MULTI_2023-09-19_01</td>
-      <td>2023-09-19T00:52Z</td>
-      <td>STEREO-A</td>
-      <td>0.960</td>
-      <td>3.2</td>
-      <td>7.1</td>
-      <td>-</td>
-      <td>512</td>
-      <td>14.5</td>
-      <td>-9.5</td>
-      <td>ICME_STEREO_A_MOESTL_20230919_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>13</td>
+      <th>110</th>
+      <td>44</td>
       <td>MULTI_2023-09-18_01</td>
       <td>2023-09-18T12:52Z</td>
       <td>Wind</td>
@@ -595,8 +1795,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>36</th>
-      <td>13</td>
+      <th>111</th>
+      <td>44</td>
       <td>MULTI_2023-09-18_01</td>
       <td>2023-09-18T09:04Z</td>
       <td>STEREO-A</td>
@@ -604,79 +1804,15 @@
       <td>3.2</td>
       <td>7.2</td>
       <td>-</td>
-      <td>596</td>
-      <td>23.8</td>
-      <td>-20.4</td>
+      <td>581</td>
+      <td>23.6</td>
+      <td>-19.8</td>
       <td>ICME_STEREO_A_MOESTL_20230918_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>37</th>
-      <td>14</td>
-      <td>MULTI_2023-09-07_01</td>
-      <td>2023-09-12T10:24Z</td>
-      <td>Wind</td>
-      <td>0.998</td>
-      <td>0.2</td>
-      <td>7.2</td>
-      <td>-</td>
-      <td>384</td>
-      <td>19.8</td>
-      <td>-16.2</td>
-      <td>ICME_Wind_MOESTL_20230912_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>14</td>
-      <td>MULTI_2023-09-07_01</td>
-      <td>2023-09-12T07:05Z</td>
-      <td>STEREO-A</td>
-      <td>0.960</td>
-      <td>2.8</td>
-      <td>7.3</td>
-      <td>-</td>
-      <td>382</td>
-      <td>19.1</td>
-      <td>-13.2</td>
-      <td>ICME_STEREO_A_MOESTL_20230912_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>14</td>
-      <td>MULTI_2023-09-07_01</td>
-      <td>2023-09-10T10:05Z</td>
-      <td>PSP</td>
-      <td>0.538</td>
-      <td>0.6</td>
-      <td>3.8</td>
-      <td>-</td>
-      <td>386</td>
-      <td>43.8</td>
-      <td>-35.2</td>
-      <td>ICME_PSP_MOESTL_20230910_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>14</td>
-      <td>MULTI_2023-09-07_01</td>
-      <td>2023-09-07T09:32Z</td>
-      <td>SOHO: LASCO/C2</td>
-      <td>0.997</td>
-      <td>-0.1</td>
-      <td>7.2</td>
-      <td>-25.0</td>
-      <td>411</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2023-09-07T02:12:00-CME-001</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>14</td>
+      <th>112</th>
+      <td>45</td>
       <td>MULTI_2023-09-07_01</td>
       <td>2023-09-07T10:08Z</td>
       <td>HIA</td>
@@ -691,24 +1827,72 @@
       <td></td>
     </tr>
     <tr>
-      <th>42</th>
-      <td>15</td>
-      <td>MULTI_2023-08-30_01</td>
-      <td>2023-09-01T09:10Z</td>
-      <td>PSP</td>
-      <td>0.650</td>
-      <td>1.5</td>
-      <td>3.8</td>
+      <th>113</th>
+      <td>45</td>
+      <td>MULTI_2023-09-07_01</td>
+      <td>2023-09-07T09:32Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>0.997</td>
+      <td>-0.1</td>
+      <td>7.2</td>
+      <td>-25.0</td>
+      <td>411</td>
       <td>-</td>
-      <td>570</td>
-      <td>18.5</td>
-      <td>-11.5</td>
-      <td>ICME_PSP_MOESTL_20230901_01</td>
+      <td>-</td>
+      <td>DONKI_2023-09-07T02:12:00-CME-001</td>
       <td></td>
     </tr>
     <tr>
-      <th>43</th>
-      <td>15</td>
+      <th>114</th>
+      <td>45</td>
+      <td>MULTI_2023-09-07_01</td>
+      <td>2023-09-12T10:24Z</td>
+      <td>Wind</td>
+      <td>0.998</td>
+      <td>0.2</td>
+      <td>7.2</td>
+      <td>-</td>
+      <td>384</td>
+      <td>19.8</td>
+      <td>-16.2</td>
+      <td>ICME_Wind_MOESTL_20230912_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>45</td>
+      <td>MULTI_2023-09-07_01</td>
+      <td>2023-09-12T07:05Z</td>
+      <td>STEREO-A</td>
+      <td>0.960</td>
+      <td>2.7</td>
+      <td>7.3</td>
+      <td>-</td>
+      <td>383</td>
+      <td>19.0</td>
+      <td>-12.9</td>
+      <td>ICME_STEREO_A_MOESTL_20230912_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>45</td>
+      <td>MULTI_2023-09-07_01</td>
+      <td>2023-09-10T10:05Z</td>
+      <td>PSP</td>
+      <td>0.538</td>
+      <td>0.6</td>
+      <td>3.8</td>
+      <td>-</td>
+      <td>386</td>
+      <td>43.8</td>
+      <td>-35.2</td>
+      <td>ICME_PSP_MOESTL_20230910_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>46</td>
       <td>MULTI_2023-08-30_01</td>
       <td>2023-08-31T01:54Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -723,8 +1907,8 @@
       <td>N15W15</td>
     </tr>
     <tr>
-      <th>44</th>
-      <td>15</td>
+      <th>118</th>
+      <td>46</td>
       <td>MULTI_2023-08-30_01</td>
       <td>2023-08-31T00:08Z</td>
       <td>HIA</td>
@@ -739,24 +1923,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>45</th>
-      <td>16</td>
-      <td>MULTI_2023-08-04_01</td>
-      <td>2023-08-04T06:08Z</td>
-      <td>HIA</td>
-      <td>0.957</td>
-      <td>-0.8</td>
-      <td>6.0</td>
-      <td>68</td>
-      <td>802</td>
+      <th>119</th>
+      <td>46</td>
+      <td>MULTI_2023-08-30_01</td>
+      <td>2023-09-01T09:10Z</td>
+      <td>PSP</td>
+      <td>0.650</td>
+      <td>1.5</td>
+      <td>3.8</td>
       <td>-</td>
-      <td>-</td>
-      <td>HCME_A__20230804_01</td>
+      <td>570</td>
+      <td>18.5</td>
+      <td>-11.5</td>
+      <td>ICME_PSP_MOESTL_20230901_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>46</th>
-      <td>16</td>
+      <th>120</th>
+      <td>47</td>
       <td>MULTI_2023-08-04_01</td>
       <td>2023-08-06T00:47Z</td>
       <td>PSP</td>
@@ -771,8 +1955,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>47</th>
-      <td>16</td>
+      <th>121</th>
+      <td>47</td>
       <td>MULTI_2023-08-04_01</td>
       <td>2023-08-04T08:02Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -787,40 +1971,24 @@
       <td>N12W46</td>
     </tr>
     <tr>
-      <th>48</th>
-      <td>17</td>
-      <td>MULTI_2023-08-02_01</td>
-      <td>2023-08-05T02:04Z</td>
-      <td>Wind</td>
-      <td>1.004</td>
-      <td>0.2</td>
-      <td>6.1</td>
-      <td>-</td>
-      <td>413</td>
-      <td>23.6</td>
-      <td>-19.2</td>
-      <td>ICME_Wind_MOESTL_20230805_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>49</th>
-      <td>17</td>
-      <td>MULTI_2023-08-02_01</td>
-      <td>2023-08-04T22:55Z</td>
-      <td>STEREO-A</td>
+      <th>122</th>
+      <td>47</td>
+      <td>MULTI_2023-08-04_01</td>
+      <td>2023-08-04T06:08Z</td>
+      <td>HIA</td>
       <td>0.957</td>
-      <td>-0.7</td>
-      <td>6.1</td>
+      <td>-0.8</td>
+      <td>6.0</td>
+      <td>68</td>
+      <td>802</td>
       <td>-</td>
-      <td>398</td>
-      <td>20.0</td>
-      <td>-17.0</td>
-      <td>ICME_STEREO_A_MOESTL_20230804_01</td>
+      <td>-</td>
+      <td>HCME_A__20230804_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>50</th>
-      <td>17</td>
+      <th>123</th>
+      <td>48</td>
       <td>MULTI_2023-08-02_01</td>
       <td>2023-08-02T10:01Z</td>
       <td>HIA</td>
@@ -835,24 +2003,40 @@
       <td></td>
     </tr>
     <tr>
-      <th>51</th>
-      <td>18</td>
-      <td>MULTI_2023-07-27_01</td>
-      <td>2023-08-01T11:12Z</td>
+      <th>124</th>
+      <td>48</td>
+      <td>MULTI_2023-08-02_01</td>
+      <td>2023-08-05T02:04Z</td>
       <td>Wind</td>
       <td>1.004</td>
       <td>0.2</td>
-      <td>5.9</td>
+      <td>6.1</td>
       <td>-</td>
-      <td>387</td>
-      <td>11.6</td>
-      <td>-9.7</td>
-      <td>ICME_Wind_MOESTL_20230801_01</td>
+      <td>413</td>
+      <td>23.6</td>
+      <td>-19.2</td>
+      <td>ICME_Wind_MOESTL_20230805_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>52</th>
-      <td>18</td>
+      <th>125</th>
+      <td>48</td>
+      <td>MULTI_2023-08-02_01</td>
+      <td>2023-08-04T22:55Z</td>
+      <td>STEREO-A</td>
+      <td>0.957</td>
+      <td>-0.7</td>
+      <td>6.1</td>
+      <td>-</td>
+      <td>403</td>
+      <td>19.7</td>
+      <td>-16.6</td>
+      <td>ICME_STEREO_A_MOESTL_20230804_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>49</td>
       <td>MULTI_2023-07-27_01</td>
       <td>2023-08-01T09:23Z</td>
       <td>STEREO-A</td>
@@ -860,15 +2044,15 @@
       <td>-1.0</td>
       <td>5.9</td>
       <td>-</td>
-      <td>370</td>
-      <td>14.9</td>
-      <td>-12.6</td>
+      <td>390</td>
+      <td>14.0</td>
+      <td>-11.7</td>
       <td>ICME_STEREO_A_WEILER_20230801_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>53</th>
-      <td>18</td>
+      <th>127</th>
+      <td>49</td>
       <td>MULTI_2023-07-27_01</td>
       <td>2023-07-27T20:21Z</td>
       <td>HIA</td>
@@ -883,8 +2067,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>54</th>
-      <td>19</td>
+      <th>128</th>
+      <td>49</td>
+      <td>MULTI_2023-07-27_01</td>
+      <td>2023-08-01T11:12Z</td>
+      <td>Wind</td>
+      <td>1.004</td>
+      <td>0.2</td>
+      <td>5.9</td>
+      <td>-</td>
+      <td>387</td>
+      <td>11.6</td>
+      <td>-9.7</td>
+      <td>ICME_Wind_MOESTL_20230801_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>50</td>
       <td>MULTI_2023-07-23_01</td>
       <td>2023-07-25T07:13Z</td>
       <td>PSP</td>
@@ -899,8 +2099,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>55</th>
-      <td>19</td>
+      <th>130</th>
+      <td>50</td>
       <td>MULTI_2023-07-23_01</td>
       <td>2023-07-23T17:59Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -915,8 +2115,8 @@
       <td>N23W33</td>
     </tr>
     <tr>
-      <th>56</th>
-      <td>19</td>
+      <th>131</th>
+      <td>50</td>
       <td>MULTI_2023-07-23_01</td>
       <td>2023-07-23T17:21Z</td>
       <td>HIA</td>
@@ -931,8 +2131,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>57</th>
-      <td>20</td>
+      <th>132</th>
+      <td>51</td>
       <td>MULTI_2023-07-22_01</td>
       <td>2023-07-22T08:41Z</td>
       <td>HIA</td>
@@ -947,8 +2147,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>58</th>
-      <td>20</td>
+      <th>133</th>
+      <td>51</td>
       <td>MULTI_2023-07-22_01</td>
       <td>2023-07-24T12:08Z</td>
       <td>SolarOrbiter</td>
@@ -963,8 +2163,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>59</th>
-      <td>20</td>
+      <th>134</th>
+      <td>51</td>
       <td>MULTI_2023-07-22_01</td>
       <td>2023-07-22T10:18Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -979,40 +2179,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>60</th>
-      <td>21</td>
-      <td>MULTI_2023-07-17_01</td>
-      <td>2023-07-19T04:59Z</td>
-      <td>PSP</td>
-      <td>0.661</td>
-      <td>16.5</td>
-      <td>3.2</td>
-      <td>-</td>
-      <td>494</td>
-      <td>22.9</td>
-      <td>-10.1</td>
-      <td>ICME_PSP_MOESTL_20230719_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>61</th>
-      <td>21</td>
-      <td>MULTI_2023-07-17_01</td>
-      <td>2023-07-18T02:15Z</td>
-      <td>SOHO: LASCO/C2</td>
-      <td>1.008</td>
-      <td>-0.2</td>
-      <td>4.6</td>
-      <td>32.0</td>
-      <td>1388</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2023-07-17T23:36:00-CME-001</td>
-      <td>S25W73</td>
-    </tr>
-    <tr>
-      <th>62</th>
-      <td>21</td>
+      <th>135</th>
+      <td>52</td>
       <td>MULTI_2023-07-17_01</td>
       <td>2023-07-18T00:41Z</td>
       <td>HIA</td>
@@ -1027,24 +2195,40 @@
       <td></td>
     </tr>
     <tr>
-      <th>63</th>
-      <td>22</td>
-      <td>MULTI_2023-07-14_01</td>
-      <td>2023-07-16T12:50Z</td>
-      <td>STEREO-A</td>
-      <td>0.957</td>
-      <td>-2.6</td>
-      <td>4.3</td>
+      <th>136</th>
+      <td>52</td>
+      <td>MULTI_2023-07-17_01</td>
+      <td>2023-07-19T04:59Z</td>
+      <td>PSP</td>
+      <td>0.661</td>
+      <td>16.5</td>
+      <td>3.2</td>
       <td>-</td>
-      <td>453</td>
-      <td>20.9</td>
-      <td>-16.8</td>
-      <td>ICME_STEREO_A_WEILER_20230716_01</td>
+      <td>494</td>
+      <td>22.9</td>
+      <td>-10.1</td>
+      <td>ICME_PSP_MOESTL_20230719_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>64</th>
-      <td>22</td>
+      <th>137</th>
+      <td>52</td>
+      <td>MULTI_2023-07-17_01</td>
+      <td>2023-07-18T02:15Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>1.008</td>
+      <td>-0.2</td>
+      <td>4.6</td>
+      <td>32.0</td>
+      <td>1388</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2023-07-17T23:36:00-CME-001</td>
+      <td>S25W73</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>53</td>
       <td>MULTI_2023-07-14_01</td>
       <td>2023-07-16T02:33Z</td>
       <td>PSP</td>
@@ -1059,8 +2243,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>65</th>
-      <td>22</td>
+      <th>139</th>
+      <td>53</td>
+      <td>MULTI_2023-07-14_01</td>
+      <td>2023-07-16T12:50Z</td>
+      <td>STEREO-A</td>
+      <td>0.957</td>
+      <td>-2.7</td>
+      <td>4.3</td>
+      <td>-</td>
+      <td>464</td>
+      <td>20.2</td>
+      <td>-15.9</td>
+      <td>ICME_STEREO_A_WEILER_20230716_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>53</td>
       <td>MULTI_2023-07-14_01</td>
       <td>2023-07-14T15:16Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -1075,8 +2275,8 @@
       <td>S23W25</td>
     </tr>
     <tr>
-      <th>66</th>
-      <td>22</td>
+      <th>141</th>
+      <td>53</td>
       <td>MULTI_2023-07-14_01</td>
       <td>2023-07-14T17:28Z</td>
       <td>HIA</td>
@@ -1091,40 +2291,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>67</th>
-      <td>23</td>
-      <td>MULTI_2023-07-11_01</td>
-      <td>2023-07-12T00:08Z</td>
-      <td>HIA</td>
-      <td>0.958</td>
-      <td>-3.1</td>
-      <td>3.8</td>
-      <td>9</td>
-      <td>502</td>
-      <td>-</td>
-      <td>-</td>
-      <td>HCME_A__20230712_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>68</th>
-      <td>23</td>
+      <th>142</th>
+      <td>54</td>
       <td>MULTI_2023-07-11_01</td>
       <td>2023-07-14T10:47Z</td>
       <td>STEREO-A</td>
       <td>0.957</td>
-      <td>-2.8</td>
+      <td>-2.9</td>
       <td>4.1</td>
       <td>-</td>
-      <td>404</td>
-      <td>18.5</td>
-      <td>-10.4</td>
+      <td>388</td>
+      <td>18.2</td>
+      <td>-8.6</td>
       <td>ICME_STEREO_A_WEILER_20230714_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>69</th>
-      <td>23</td>
+      <th>143</th>
+      <td>54</td>
       <td>MULTI_2023-07-11_01</td>
       <td>2023-07-11T22:42Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -1139,8 +2323,24 @@
       <td>S35E05</td>
     </tr>
     <tr>
-      <th>70</th>
-      <td>24</td>
+      <th>144</th>
+      <td>54</td>
+      <td>MULTI_2023-07-11_01</td>
+      <td>2023-07-12T00:08Z</td>
+      <td>HIA</td>
+      <td>0.958</td>
+      <td>-3.1</td>
+      <td>3.8</td>
+      <td>9</td>
+      <td>502</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20230712_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>55</td>
       <td>MULTI_2023-07-10_01</td>
       <td>2023-07-11T20:07Z</td>
       <td>PSP</td>
@@ -1155,8 +2355,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>71</th>
-      <td>24</td>
+      <th>146</th>
+      <td>55</td>
       <td>MULTI_2023-07-10_01</td>
       <td>2023-07-10T07:48Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -1171,8 +2371,8 @@
       <td>S13W49</td>
     </tr>
     <tr>
-      <th>72</th>
-      <td>24</td>
+      <th>147</th>
+      <td>55</td>
       <td>MULTI_2023-07-10_01</td>
       <td>2023-07-10T06:08Z</td>
       <td>HIA</td>
@@ -1187,8 +2387,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>73</th>
-      <td>25</td>
+      <th>148</th>
+      <td>56</td>
       <td>MULTI_2023-06-24_01</td>
       <td>2023-06-26T00:16Z</td>
       <td>SolarOrbiter</td>
@@ -1203,8 +2403,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>74</th>
-      <td>25</td>
+      <th>149</th>
+      <td>56</td>
       <td>MULTI_2023-06-24_01</td>
       <td>2023-06-24T12:08Z</td>
       <td>HIA</td>
@@ -1219,56 +2419,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>75</th>
-      <td>26</td>
-      <td>MULTI_2023-06-08_01</td>
-      <td>2023-06-11T07:02Z</td>
-      <td>PSP</td>
-      <td>0.407</td>
-      <td>98.1</td>
-      <td>3.8</td>
-      <td>-</td>
-      <td>333</td>
-      <td>40.3</td>
-      <td>-37.2</td>
-      <td>ICME_PSP_MOESTL_20230611_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>76</th>
-      <td>26</td>
-      <td>MULTI_2023-06-08_01</td>
-      <td>2023-06-10T20:11Z</td>
-      <td>BepiColombo</td>
-      <td>0.388</td>
-      <td>84.3</td>
-      <td>1.0</td>
-      <td>-</td>
-      <td>-</td>
-      <td>55.0</td>
-      <td>-51.6</td>
-      <td>ICME_BEPI_MOESTL_20230610_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>77</th>
-      <td>26</td>
-      <td>MULTI_2023-06-08_01</td>
-      <td>2023-06-09T09:43Z</td>
-      <td>SOHO: LASCO/C2</td>
-      <td>1.006</td>
-      <td>0.1</td>
-      <td>0.3</td>
-      <td>85.0</td>
-      <td>280</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2023-06-08T21:12:00-CME-001</td>
-      <td>S15W80</td>
-    </tr>
-    <tr>
-      <th>78</th>
-      <td>26</td>
+      <th>150</th>
+      <td>57</td>
       <td>MULTI_2023-06-08_01</td>
       <td>2023-06-09T00:48Z</td>
       <td>HIA</td>
@@ -1283,24 +2435,56 @@
       <td></td>
     </tr>
     <tr>
-      <th>79</th>
-      <td>27</td>
-      <td>MULTI_2023-05-16_01</td>
-      <td>2023-05-16T18:48Z</td>
-      <td>HIA</td>
-      <td>0.961</td>
-      <td>-8.4</td>
-      <td>-3.5</td>
-      <td>108</td>
-      <td>874</td>
+      <th>151</th>
+      <td>57</td>
+      <td>MULTI_2023-06-08_01</td>
+      <td>2023-06-11T07:02Z</td>
+      <td>PSP</td>
+      <td>0.407</td>
+      <td>98.1</td>
+      <td>3.8</td>
       <td>-</td>
-      <td>-</td>
-      <td>HCME_A__20230516_01</td>
+      <td>333</td>
+      <td>40.3</td>
+      <td>-37.2</td>
+      <td>ICME_PSP_MOESTL_20230611_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>80</th>
-      <td>27</td>
+      <th>152</th>
+      <td>57</td>
+      <td>MULTI_2023-06-08_01</td>
+      <td>2023-06-10T20:11Z</td>
+      <td>BepiColombo</td>
+      <td>0.388</td>
+      <td>84.3</td>
+      <td>1.0</td>
+      <td>-</td>
+      <td>-</td>
+      <td>55.0</td>
+      <td>-52.1</td>
+      <td>ICME_BEPI_MOESTL_20230610_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>57</td>
+      <td>MULTI_2023-06-08_01</td>
+      <td>2023-06-09T09:43Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>1.006</td>
+      <td>0.1</td>
+      <td>0.3</td>
+      <td>85.0</td>
+      <td>280</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2023-06-08T21:12:00-CME-001</td>
+      <td>S15W80</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>58</td>
       <td>MULTI_2023-05-16_01</td>
       <td>2023-05-18T06:50Z</td>
       <td>PSP</td>
@@ -1315,8 +2499,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>81</th>
-      <td>27</td>
+      <th>155</th>
+      <td>58</td>
       <td>MULTI_2023-05-16_01</td>
       <td>2023-05-16T19:59Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -1331,8 +2515,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>82</th>
-      <td>28</td>
+      <th>156</th>
+      <td>58</td>
+      <td>MULTI_2023-05-16_01</td>
+      <td>2023-05-16T18:48Z</td>
+      <td>HIA</td>
+      <td>0.961</td>
+      <td>-8.4</td>
+      <td>-3.5</td>
+      <td>108</td>
+      <td>874</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20230516_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>59</td>
       <td>MULTI_2023-05-13_01</td>
       <td>2023-05-15T03:09Z</td>
       <td>PSP</td>
@@ -1347,8 +2547,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>83</th>
-      <td>28</td>
+      <th>158</th>
+      <td>59</td>
       <td>MULTI_2023-05-13_01</td>
       <td>2023-05-13T05:08Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -1363,8 +2563,8 @@
       <td>N15W76</td>
     </tr>
     <tr>
-      <th>84</th>
-      <td>28</td>
+      <th>159</th>
+      <td>59</td>
       <td>MULTI_2023-05-13_01</td>
       <td>2023-05-13T02:48Z</td>
       <td>HIA</td>
@@ -1379,8 +2579,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>85</th>
-      <td>29</td>
+      <th>160</th>
+      <td>60</td>
       <td>MULTI_2023-05-07_01</td>
       <td>2023-05-09T02:19Z</td>
       <td>BepiColombo</td>
@@ -1395,8 +2595,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>86</th>
-      <td>29</td>
+      <th>161</th>
+      <td>60</td>
       <td>MULTI_2023-05-07_01</td>
       <td>2023-05-08T01:24Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -1411,8 +2611,8 @@
       <td>N17W07</td>
     </tr>
     <tr>
-      <th>87</th>
-      <td>29</td>
+      <th>162</th>
+      <td>60</td>
       <td>MULTI_2023-05-07_01</td>
       <td>2023-05-08T00:48Z</td>
       <td>HIA</td>
@@ -1427,8 +2627,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>88</th>
-      <td>30</td>
+      <th>163</th>
+      <td>61</td>
       <td>MULTI_2023-05-01_01</td>
       <td>2023-05-01T14:08Z</td>
       <td>HIA</td>
@@ -1443,8 +2643,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>89</th>
-      <td>30</td>
+      <th>164</th>
+      <td>61</td>
       <td>MULTI_2023-05-01_01</td>
       <td>2023-05-02T22:04Z</td>
       <td>SolarOrbiter</td>
@@ -1459,8 +2659,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>90</th>
-      <td>31</td>
+      <th>165</th>
+      <td>62</td>
       <td>MULTI_2023-04-28_01</td>
       <td>2023-04-28T14:48Z</td>
       <td>HIA</td>
@@ -1475,8 +2675,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>91</th>
-      <td>31</td>
+      <th>166</th>
+      <td>62</td>
       <td>MULTI_2023-04-28_01</td>
       <td>2023-04-30T17:34Z</td>
       <td>PSP</td>
@@ -1491,8 +2691,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>92</th>
-      <td>31</td>
+      <th>167</th>
+      <td>62</td>
       <td>MULTI_2023-04-28_01</td>
       <td>2023-04-28T17:54Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -1507,8 +2707,8 @@
       <td>S20W90</td>
     </tr>
     <tr>
-      <th>93</th>
-      <td>32</td>
+      <th>168</th>
+      <td>63</td>
       <td>MULTI_2023-04-21_01</td>
       <td>2023-04-21T20:08Z</td>
       <td>HIA</td>
@@ -1523,8 +2723,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>94</th>
-      <td>32</td>
+      <th>169</th>
+      <td>63</td>
       <td>MULTI_2023-04-21_01</td>
       <td>2023-04-21T21:09Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -1539,8 +2739,8 @@
       <td>S21W12</td>
     </tr>
     <tr>
-      <th>95</th>
-      <td>32</td>
+      <th>170</th>
+      <td>63</td>
       <td>MULTI_2023-04-21_01</td>
       <td>2023-04-23T17:02Z</td>
       <td>Wind</td>
@@ -1555,8 +2755,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>96</th>
-      <td>32</td>
+      <th>171</th>
+      <td>63</td>
       <td>MULTI_2023-04-21_01</td>
       <td>2023-04-23T14:29Z</td>
       <td>STEREO-A</td>
@@ -1571,8 +2771,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>97</th>
-      <td>32</td>
+      <th>172</th>
+      <td>63</td>
       <td>MULTI_2023-04-21_01</td>
       <td>2023-04-22T18:28Z</td>
       <td>BepiColombo</td>
@@ -1587,8 +2787,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>98</th>
-      <td>33</td>
+      <th>173</th>
+      <td>64</td>
       <td>MULTI_2023-04-16_01</td>
       <td>2023-04-20T01:48Z</td>
       <td>STEREO-A</td>
@@ -1603,8 +2803,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>99</th>
-      <td>33</td>
+      <th>174</th>
+      <td>64</td>
       <td>MULTI_2023-04-16_01</td>
       <td>2023-04-18T13:26Z</td>
       <td>Wind</td>
@@ -1619,8 +2819,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>100</th>
-      <td>33</td>
+      <th>175</th>
+      <td>64</td>
       <td>MULTI_2023-04-16_01</td>
       <td>2023-04-16T02:48Z</td>
       <td>HIA</td>
@@ -1635,8 +2835,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>101</th>
-      <td>34</td>
+      <th>176</th>
+      <td>65</td>
       <td>MULTI_2023-03-21_01</td>
       <td>2023-03-23T05:54Z</td>
       <td>Wind</td>
@@ -1651,8 +2851,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>102</th>
-      <td>34</td>
+      <th>177</th>
+      <td>65</td>
       <td>MULTI_2023-03-21_01</td>
       <td>2023-03-22T05:53Z</td>
       <td>STEREO-A</td>
@@ -1667,8 +2867,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>103</th>
-      <td>34</td>
+      <th>178</th>
+      <td>65</td>
       <td>MULTI_2023-03-21_01</td>
       <td>2023-03-21T12:23Z</td>
       <td>SolarOrbiter</td>
@@ -1683,72 +2883,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>104</th>
-      <td>35</td>
-      <td>MULTI_2023-03-12_01</td>
-      <td>2023-03-15T04:02Z</td>
-      <td>Wind</td>
-      <td>0.986</td>
-      <td>0.2</td>
-      <td>-7.2</td>
-      <td>-</td>
-      <td>504</td>
-      <td>13.8</td>
-      <td>-12.4</td>
-      <td>ICME_Wind_MOESTL_20230315_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>105</th>
-      <td>35</td>
-      <td>MULTI_2023-03-12_01</td>
-      <td>2023-03-15T01:16Z</td>
-      <td>STEREO-A</td>
-      <td>0.967</td>
-      <td>-12.3</td>
-      <td>-7.3</td>
-      <td>-</td>
-      <td>496</td>
-      <td>23.6</td>
-      <td>-22.3</td>
-      <td>ICME_STEREO_A_MOESTL_20230315_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>106</th>
-      <td>35</td>
-      <td>MULTI_2023-03-12_01</td>
-      <td>2023-03-14T01:08Z</td>
-      <td>SolarOrbiter</td>
-      <td>0.596</td>
-      <td>-25.7</td>
-      <td>-5.2</td>
-      <td>-</td>
-      <td>555</td>
-      <td>31.4</td>
-      <td>-24.6</td>
-      <td>ICME_SOLO_MOESTL_20230314_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>107</th>
-      <td>35</td>
-      <td>MULTI_2023-03-12_01</td>
-      <td>2023-03-13T14:55Z</td>
-      <td>BepiColombo</td>
-      <td>0.407</td>
-      <td>-27.5</td>
-      <td>0.1</td>
-      <td>-</td>
-      <td>-</td>
-      <td>41.4</td>
-      <td>-33.9</td>
-      <td>ICME_BEPI_MOESTL_20230313_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>108</th>
-      <td>35</td>
+      <th>179</th>
+      <td>66</td>
       <td>MULTI_2023-03-12_01</td>
       <td>2023-03-12T23:37Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -1763,8 +2899,72 @@
       <td>S25E20</td>
     </tr>
     <tr>
-      <th>109</th>
-      <td>36</td>
+      <th>180</th>
+      <td>66</td>
+      <td>MULTI_2023-03-12_01</td>
+      <td>2023-03-13T14:55Z</td>
+      <td>BepiColombo</td>
+      <td>0.407</td>
+      <td>-27.5</td>
+      <td>0.1</td>
+      <td>-</td>
+      <td>-</td>
+      <td>41.4</td>
+      <td>-34.1</td>
+      <td>ICME_BEPI_MOESTL_20230313_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>66</td>
+      <td>MULTI_2023-03-12_01</td>
+      <td>2023-03-14T01:08Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.596</td>
+      <td>-25.7</td>
+      <td>-5.2</td>
+      <td>-</td>
+      <td>555</td>
+      <td>31.4</td>
+      <td>-24.6</td>
+      <td>ICME_SOLO_MOESTL_20230314_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>66</td>
+      <td>MULTI_2023-03-12_01</td>
+      <td>2023-03-15T01:16Z</td>
+      <td>STEREO-A</td>
+      <td>0.967</td>
+      <td>-12.3</td>
+      <td>-7.3</td>
+      <td>-</td>
+      <td>496</td>
+      <td>23.6</td>
+      <td>-22.3</td>
+      <td>ICME_STEREO_A_MOESTL_20230315_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>66</td>
+      <td>MULTI_2023-03-12_01</td>
+      <td>2023-03-15T04:02Z</td>
+      <td>Wind</td>
+      <td>0.986</td>
+      <td>0.2</td>
+      <td>-7.2</td>
+      <td>-</td>
+      <td>504</td>
+      <td>13.8</td>
+      <td>-12.4</td>
+      <td>ICME_Wind_MOESTL_20230315_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>67</td>
       <td>MULTI_2023-03-13_01</td>
       <td>2023-03-13T07:13Z</td>
       <td>PSP</td>
@@ -1779,8 +2979,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>110</th>
-      <td>36</td>
+      <th>185</th>
+      <td>67</td>
       <td>MULTI_2023-03-13_01</td>
       <td>2023-03-13T05:13Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -1795,8 +2995,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>111</th>
-      <td>36</td>
+      <th>186</th>
+      <td>67</td>
       <td>MULTI_2023-03-13_01</td>
       <td>2023-03-13T05:28Z</td>
       <td>HIA</td>
@@ -1811,8 +3011,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>112</th>
-      <td>37</td>
+      <th>187</th>
+      <td>68</td>
       <td>MULTI_2023-02-18_01</td>
       <td>2023-02-18T06:32Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -1827,8 +3027,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>113</th>
-      <td>37</td>
+      <th>188</th>
+      <td>68</td>
       <td>MULTI_2023-02-18_01</td>
       <td>2023-02-19T16:07Z</td>
       <td>PSP</td>
@@ -1843,8 +3043,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>114</th>
-      <td>37</td>
+      <th>189</th>
+      <td>68</td>
       <td>MULTI_2023-02-18_01</td>
       <td>2023-02-18T21:41Z</td>
       <td>BepiColombo</td>
@@ -1854,29 +3054,13 @@
       <td>-</td>
       <td>-</td>
       <td>95.0</td>
-      <td>-65.9</td>
+      <td>-66.7</td>
       <td>ICME_BEPI_MOESTL_20230218_02</td>
       <td></td>
     </tr>
     <tr>
-      <th>115</th>
-      <td>38</td>
-      <td>MULTI_2023-01-24_01</td>
-      <td>2023-01-24T15:28Z</td>
-      <td>HIA</td>
-      <td>0.967</td>
-      <td>-13.4</td>
-      <td>-4.3</td>
-      <td>148</td>
-      <td>1379</td>
-      <td>-</td>
-      <td>-</td>
-      <td>HCME_A__20230124_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>116</th>
-      <td>38</td>
+      <th>190</th>
+      <td>69</td>
       <td>MULTI_2023-01-24_01</td>
       <td>2023-01-25T05:44Z</td>
       <td>BepiColombo</td>
@@ -1891,8 +3075,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>117</th>
-      <td>39</td>
+      <th>191</th>
+      <td>69</td>
+      <td>MULTI_2023-01-24_01</td>
+      <td>2023-01-24T15:28Z</td>
+      <td>HIA</td>
+      <td>0.967</td>
+      <td>-13.4</td>
+      <td>-4.3</td>
+      <td>148</td>
+      <td>1379</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20230124_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>70</td>
       <td>MULTI_2022-12-30_01</td>
       <td>2023-01-04T16:59Z</td>
       <td>STEREO-A</td>
@@ -1907,8 +3107,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>118</th>
-      <td>39</td>
+      <th>193</th>
+      <td>70</td>
       <td>MULTI_2022-12-30_01</td>
       <td>2023-01-03T20:56Z</td>
       <td>Wind</td>
@@ -1923,8 +3123,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>119</th>
-      <td>39</td>
+      <th>194</th>
+      <td>70</td>
       <td>MULTI_2022-12-30_01</td>
       <td>2022-12-31T00:31Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -1939,8 +3139,8 @@
       <td>N18E08</td>
     </tr>
     <tr>
-      <th>120</th>
-      <td>39</td>
+      <th>195</th>
+      <td>70</td>
       <td>MULTI_2022-12-30_01</td>
       <td>2022-12-31T00:48Z</td>
       <td>HIA</td>
@@ -1955,8 +3155,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>121</th>
-      <td>40</td>
+      <th>196</th>
+      <td>71</td>
       <td>MULTI_2022-12-24_01</td>
       <td>2022-12-26T07:51Z</td>
       <td>STEREO-A</td>
@@ -1971,8 +3171,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>122</th>
-      <td>40</td>
+      <th>197</th>
+      <td>71</td>
       <td>MULTI_2022-12-24_01</td>
       <td>2022-12-26T05:21Z</td>
       <td>SolarOrbiter</td>
@@ -1987,8 +3187,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>123</th>
-      <td>40</td>
+      <th>198</th>
+      <td>71</td>
       <td>MULTI_2022-12-24_01</td>
       <td>2022-12-24T06:13Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -2003,8 +3203,8 @@
       <td>N20E28</td>
     </tr>
     <tr>
-      <th>124</th>
-      <td>41</td>
+      <th>199</th>
+      <td>72</td>
       <td>MULTI_2022-11-14_01</td>
       <td>2022-11-19T22:54Z</td>
       <td>Wind</td>
@@ -2019,8 +3219,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>125</th>
-      <td>41</td>
+      <th>200</th>
+      <td>72</td>
       <td>MULTI_2022-11-14_01</td>
       <td>2022-11-14T06:48Z</td>
       <td>HIA</td>
@@ -2035,8 +3235,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>126</th>
-      <td>42</td>
+      <th>201</th>
+      <td>73</td>
       <td>MULTI_2022-11-03_01</td>
       <td>2022-11-07T00:40Z</td>
       <td>Wind</td>
@@ -2051,8 +3251,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>127</th>
-      <td>42</td>
+      <th>202</th>
+      <td>73</td>
       <td>MULTI_2022-11-03_01</td>
       <td>2022-11-03T08:08Z</td>
       <td>HIA</td>
@@ -2067,56 +3267,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>128</th>
-      <td>43</td>
-      <td>MULTI_2022-09-05_01</td>
-      <td>2022-09-06T10:01Z</td>
-      <td>SolarOrbiter</td>
-      <td>0.686</td>
-      <td>150.0</td>
-      <td>-3.7</td>
-      <td>-</td>
-      <td>710</td>
-      <td>23.8</td>
-      <td>-10.6</td>
-      <td>ICME_SOLO_MOESTL_20220906_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>129</th>
-      <td>43</td>
-      <td>MULTI_2022-09-05_01</td>
-      <td>2022-09-05T17:27Z</td>
-      <td>PSP</td>
-      <td>0.068</td>
-      <td>124.7</td>
-      <td>-2.1</td>
-      <td>-</td>
-      <td>761</td>
-      <td>1167.9</td>
-      <td>-808.4</td>
-      <td>ICME_PSP_MOESTL_20220905_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>130</th>
-      <td>43</td>
-      <td>MULTI_2022-09-05_01</td>
-      <td>2022-09-05T19:03Z</td>
-      <td>SOHO: LASCO/C2</td>
-      <td>0.998</td>
-      <td>-0.2</td>
-      <td>7.2</td>
-      <td>177.0</td>
-      <td>1377</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2022-09-05T16:36:00-CME-001</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>131</th>
-      <td>43</td>
+      <th>203</th>
+      <td>74</td>
       <td>MULTI_2022-09-05_01</td>
       <td>2022-09-05T18:09Z</td>
       <td>HIA</td>
@@ -2131,8 +3283,56 @@
       <td></td>
     </tr>
     <tr>
-      <th>132</th>
-      <td>44</td>
+      <th>204</th>
+      <td>74</td>
+      <td>MULTI_2022-09-05_01</td>
+      <td>2022-09-05T17:27Z</td>
+      <td>PSP</td>
+      <td>0.068</td>
+      <td>124.6</td>
+      <td>-2.1</td>
+      <td>-</td>
+      <td>761</td>
+      <td>1167.9</td>
+      <td>-808.4</td>
+      <td>ICME_PSP_MOESTL_20220905_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>205</th>
+      <td>74</td>
+      <td>MULTI_2022-09-05_01</td>
+      <td>2022-09-06T10:01Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.686</td>
+      <td>150.0</td>
+      <td>-3.7</td>
+      <td>-</td>
+      <td>710</td>
+      <td>23.8</td>
+      <td>-10.6</td>
+      <td>ICME_SOLO_MOESTL_20220906_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>206</th>
+      <td>74</td>
+      <td>MULTI_2022-09-05_01</td>
+      <td>2022-09-05T19:03Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>0.998</td>
+      <td>-0.2</td>
+      <td>7.2</td>
+      <td>177.0</td>
+      <td>1377</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2022-09-05T16:36:00-CME-001</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>207</th>
+      <td>75</td>
       <td>MULTI_2022-08-31_01</td>
       <td>2022-08-31T21:45Z</td>
       <td>SolarOrbiter</td>
@@ -2147,8 +3347,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>133</th>
-      <td>44</td>
+      <th>208</th>
+      <td>75</td>
       <td>MULTI_2022-08-31_01</td>
       <td>2022-08-30T20:09Z</td>
       <td>HIA</td>
@@ -2163,40 +3363,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>134</th>
-      <td>45</td>
-      <td>MULTI_2022-08-28_01</td>
-      <td>2022-08-28T17:28Z</td>
-      <td>HIA</td>
-      <td>0.956</td>
-      <td>-20.2</td>
-      <td>6.3</td>
-      <td>64</td>
-      <td>1355</td>
-      <td>-</td>
-      <td>-</td>
-      <td>HCME_A__20220828_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>135</th>
-      <td>45</td>
-      <td>MULTI_2022-08-28_01</td>
-      <td>2022-08-28T19:00Z</td>
-      <td>STEREO A: SECCHI/COR2</td>
-      <td>0.956</td>
-      <td>-20.2</td>
-      <td>6.4</td>
-      <td>80.0</td>
-      <td>1148</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2022-08-28T16:23:00-CME-001</td>
-      <td>S27W85</td>
-    </tr>
-    <tr>
-      <th>136</th>
-      <td>45</td>
+      <th>209</th>
+      <td>76</td>
       <td>MULTI_2022-08-28_01</td>
       <td>2022-08-29T02:42Z</td>
       <td>PSP</td>
@@ -2211,24 +3379,40 @@
       <td></td>
     </tr>
     <tr>
-      <th>137</th>
-      <td>46</td>
-      <td>MULTI_2022-08-17_01</td>
-      <td>2022-08-17T16:48Z</td>
+      <th>210</th>
+      <td>76</td>
+      <td>MULTI_2022-08-28_01</td>
+      <td>2022-08-28T19:00Z</td>
+      <td>STEREO A: SECCHI/COR2</td>
+      <td>0.956</td>
+      <td>-20.2</td>
+      <td>6.4</td>
+      <td>80.0</td>
+      <td>1148</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2022-08-28T16:23:00-CME-001</td>
+      <td>S27W85</td>
+    </tr>
+    <tr>
+      <th>211</th>
+      <td>76</td>
+      <td>MULTI_2022-08-28_01</td>
+      <td>2022-08-28T17:28Z</td>
       <td>HIA</td>
       <td>0.956</td>
-      <td>-21.2</td>
-      <td>5.5</td>
-      <td>33</td>
-      <td>870</td>
+      <td>-20.2</td>
+      <td>6.3</td>
+      <td>64</td>
+      <td>1355</td>
       <td>-</td>
       <td>-</td>
-      <td>HCME_A__20220817_01</td>
+      <td>HCME_A__20220828_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>138</th>
-      <td>46</td>
+      <th>212</th>
+      <td>77</td>
       <td>MULTI_2022-08-17_01</td>
       <td>2022-08-18T13:28Z</td>
       <td>PSP</td>
@@ -2243,8 +3427,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>139</th>
-      <td>46</td>
+      <th>213</th>
+      <td>77</td>
       <td>MULTI_2022-08-17_01</td>
       <td>2022-08-17T19:26Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -2259,8 +3443,24 @@
       <td>S23W25</td>
     </tr>
     <tr>
-      <th>140</th>
-      <td>47</td>
+      <th>214</th>
+      <td>77</td>
+      <td>MULTI_2022-08-17_01</td>
+      <td>2022-08-17T16:48Z</td>
+      <td>HIA</td>
+      <td>0.956</td>
+      <td>-21.2</td>
+      <td>5.5</td>
+      <td>33</td>
+      <td>870</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20220817_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>215</th>
+      <td>78</td>
       <td>MULTI_2022-07-23_01</td>
       <td>2022-07-25T06:24Z</td>
       <td>SolarOrbiter</td>
@@ -2275,8 +3475,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>141</th>
-      <td>47</td>
+      <th>216</th>
+      <td>78</td>
       <td>MULTI_2022-07-23_01</td>
       <td>2022-07-23T22:08Z</td>
       <td>HIA</td>
@@ -2291,24 +3491,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>142</th>
-      <td>48</td>
-      <td>MULTI_2022-07-21_01</td>
-      <td>2022-07-22T23:01Z</td>
-      <td>STEREO-A</td>
-      <td>0.957</td>
-      <td>-23.5</td>
-      <td>2.7</td>
-      <td>-</td>
-      <td>469</td>
-      <td>8.5</td>
-      <td>-4.9</td>
-      <td>ICME_STEREO_A_MOESTL_20220722_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>143</th>
-      <td>48</td>
+      <th>217</th>
+      <td>79</td>
       <td>MULTI_2022-07-21_01</td>
       <td>2022-07-21T03:55Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -2323,8 +3507,24 @@
       <td>N13W04</td>
     </tr>
     <tr>
-      <th>144</th>
-      <td>48</td>
+      <th>218</th>
+      <td>79</td>
+      <td>MULTI_2022-07-21_01</td>
+      <td>2022-07-22T23:01Z</td>
+      <td>STEREO-A</td>
+      <td>0.957</td>
+      <td>-23.5</td>
+      <td>2.7</td>
+      <td>-</td>
+      <td>469</td>
+      <td>8.5</td>
+      <td>-4.9</td>
+      <td>ICME_STEREO_A_MOESTL_20220722_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>219</th>
+      <td>79</td>
       <td>MULTI_2022-07-21_01</td>
       <td>2022-07-21T04:08Z</td>
       <td>HIA</td>
@@ -2339,8 +3539,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>145</th>
-      <td>49</td>
+      <th>220</th>
+      <td>80</td>
       <td>MULTI_2022-07-16_01</td>
       <td>2022-07-18T23:42Z</td>
       <td>PSP</td>
@@ -2355,8 +3555,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>146</th>
-      <td>49</td>
+      <th>221</th>
+      <td>80</td>
       <td>MULTI_2022-07-16_01</td>
       <td>2022-07-16T18:48Z</td>
       <td>HIA</td>
@@ -2371,8 +3571,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>147</th>
-      <td>50</td>
+      <th>222</th>
+      <td>81</td>
       <td>MULTI_2022-07-11_01</td>
       <td>2022-07-13T15:55Z</td>
       <td>SolarOrbiter</td>
@@ -2387,8 +3587,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>148</th>
-      <td>50</td>
+      <th>223</th>
+      <td>81</td>
       <td>MULTI_2022-07-11_01</td>
       <td>2022-07-11T16:50Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -2403,8 +3603,8 @@
       <td>S20W100</td>
     </tr>
     <tr>
-      <th>149</th>
-      <td>50</td>
+      <th>224</th>
+      <td>81</td>
       <td>MULTI_2022-07-11_01</td>
       <td>2022-07-11T15:28Z</td>
       <td>HIA</td>
@@ -2419,8 +3619,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>150</th>
-      <td>51</td>
+      <th>225</th>
+      <td>82</td>
       <td>MULTI_2022-07-08_01</td>
       <td>2022-07-10T16:35Z</td>
       <td>STEREO-A</td>
@@ -2435,8 +3635,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>151</th>
-      <td>51</td>
+      <th>226</th>
+      <td>82</td>
       <td>MULTI_2022-07-08_01</td>
       <td>2022-07-08T21:28Z</td>
       <td>HIA</td>
@@ -2451,8 +3651,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>152</th>
-      <td>52</td>
+      <th>227</th>
+      <td>83</td>
       <td>MULTI_2022-07-03_01</td>
       <td>2022-07-07T06:00Z</td>
       <td>Wind</td>
@@ -2467,8 +3667,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>153</th>
-      <td>52</td>
+      <th>228</th>
+      <td>83</td>
       <td>MULTI_2022-07-03_01</td>
       <td>2022-07-03T14:09Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -2483,8 +3683,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>154</th>
-      <td>52</td>
+      <th>229</th>
+      <td>83</td>
       <td>MULTI_2022-07-03_01</td>
       <td>2022-07-03T13:28Z</td>
       <td>HIA</td>
@@ -2499,8 +3699,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>155</th>
-      <td>53</td>
+      <th>230</th>
+      <td>84</td>
       <td>MULTI_2022-06-26_01</td>
       <td>2022-06-27T02:08Z</td>
       <td>HIA</td>
@@ -2515,8 +3715,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>156</th>
-      <td>53</td>
+      <th>231</th>
+      <td>84</td>
       <td>MULTI_2022-06-26_01</td>
       <td>2022-07-02T00:30Z</td>
       <td>Wind</td>
@@ -2531,8 +3731,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>157</th>
-      <td>53</td>
+      <th>232</th>
+      <td>84</td>
       <td>MULTI_2022-06-26_01</td>
       <td>2022-06-27T06:41Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -2547,24 +3747,8 @@
       <td>S30E09</td>
     </tr>
     <tr>
-      <th>158</th>
-      <td>54</td>
-      <td>MULTI_2022-06-05_01</td>
-      <td>2022-06-05T20:55Z</td>
-      <td>SOHO: LASCO/C2</td>
-      <td>1.006</td>
-      <td>0.2</td>
-      <td>-0.1</td>
-      <td>51.0</td>
-      <td>515</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2022-06-05T14:12:00-CME-001</td>
-      <td>S35W50</td>
-    </tr>
-    <tr>
-      <th>159</th>
-      <td>54</td>
+      <th>233</th>
+      <td>85</td>
       <td>MULTI_2022-06-05_01</td>
       <td>2022-06-07T07:22Z</td>
       <td>BepiColombo</td>
@@ -2579,8 +3763,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>160</th>
-      <td>54</td>
+      <th>234</th>
+      <td>85</td>
+      <td>MULTI_2022-06-05_01</td>
+      <td>2022-06-05T20:55Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>1.006</td>
+      <td>0.2</td>
+      <td>-0.1</td>
+      <td>51.0</td>
+      <td>515</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2022-06-05T14:12:00-CME-001</td>
+      <td>S35W50</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>85</td>
       <td>MULTI_2022-06-05_01</td>
       <td>2022-06-05T12:49Z</td>
       <td>HIA</td>
@@ -2595,8 +3795,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>161</th>
-      <td>55</td>
+      <th>236</th>
+      <td>86</td>
       <td>MULTI_2022-06-02_01</td>
       <td>2022-06-06T09:44Z</td>
       <td>Wind</td>
@@ -2611,8 +3811,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>162</th>
-      <td>55</td>
+      <th>237</th>
+      <td>86</td>
       <td>MULTI_2022-06-02_01</td>
       <td>2022-06-03T23:34Z</td>
       <td>BepiColombo</td>
@@ -2627,8 +3827,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>163</th>
-      <td>55</td>
+      <th>238</th>
+      <td>86</td>
       <td>MULTI_2022-06-02_01</td>
       <td>2022-06-02T12:36Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -2643,8 +3843,8 @@
       <td>S35W40</td>
     </tr>
     <tr>
-      <th>164</th>
-      <td>55</td>
+      <th>239</th>
+      <td>86</td>
       <td>MULTI_2022-06-02_01</td>
       <td>2022-06-02T08:49Z</td>
       <td>HIA</td>
@@ -2659,24 +3859,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>165</th>
-      <td>56</td>
-      <td>MULTI_2022-04-16_01</td>
-      <td>2022-04-16T16:09Z</td>
-      <td>HIA</td>
-      <td>0.966</td>
-      <td>-32.2</td>
-      <td>-7.3</td>
-      <td>102</td>
-      <td>422</td>
-      <td>-</td>
-      <td>-</td>
-      <td>HCME_A__20220416_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>166</th>
-      <td>56</td>
+      <th>240</th>
+      <td>87</td>
       <td>MULTI_2022-04-16_01</td>
       <td>2022-04-18T20:42Z</td>
       <td>PSP</td>
@@ -2691,8 +3875,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>167</th>
-      <td>56</td>
+      <th>241</th>
+      <td>87</td>
       <td>MULTI_2022-04-16_01</td>
       <td>2022-04-16T18:12Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -2707,56 +3891,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>168</th>
-      <td>57</td>
-      <td>MULTI_2022-04-11_01</td>
-      <td>2022-04-14T12:58Z</td>
-      <td>Wind</td>
-      <td>0.994</td>
-      <td>0.1</td>
-      <td>-5.7</td>
+      <th>242</th>
+      <td>87</td>
+      <td>MULTI_2022-04-16_01</td>
+      <td>2022-04-16T16:09Z</td>
+      <td>HIA</td>
+      <td>0.966</td>
+      <td>-32.2</td>
+      <td>-7.3</td>
+      <td>102</td>
+      <td>422</td>
       <td>-</td>
-      <td>509</td>
-      <td>20.8</td>
-      <td>-13.8</td>
-      <td>ICME_Wind_MOESTL_20220414_01</td>
+      <td>-</td>
+      <td>HCME_A__20220416_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>169</th>
-      <td>57</td>
-      <td>MULTI_2022-04-11_01</td>
-      <td>2022-04-13T03:52Z</td>
-      <td>BepiColombo</td>
-      <td>0.660</td>
-      <td>-0.6</td>
-      <td>-2.3</td>
-      <td>-</td>
-      <td>-</td>
-      <td>42.4</td>
-      <td>-39.3</td>
-      <td>ICME_BEPI_MOESTL_20220413_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>170</th>
-      <td>57</td>
-      <td>MULTI_2022-04-11_01</td>
-      <td>2022-04-11T11:45Z</td>
-      <td>SOHO: LASCO/C2</td>
-      <td>0.991</td>
-      <td>0.1</td>
-      <td>-5.9</td>
-      <td>2.0</td>
-      <td>553</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2022-04-11T06:00:00-CME-001</td>
-      <td>S15E05</td>
-    </tr>
-    <tr>
-      <th>171</th>
-      <td>57</td>
+      <th>243</th>
+      <td>88</td>
       <td>MULTI_2022-04-11_01</td>
       <td>2022-04-11T08:48Z</td>
       <td>HIA</td>
@@ -2771,8 +3923,56 @@
       <td></td>
     </tr>
     <tr>
-      <th>172</th>
-      <td>58</td>
+      <th>244</th>
+      <td>88</td>
+      <td>MULTI_2022-04-11_01</td>
+      <td>2022-04-11T11:45Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>0.991</td>
+      <td>0.1</td>
+      <td>-5.9</td>
+      <td>2.0</td>
+      <td>553</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2022-04-11T06:00:00-CME-001</td>
+      <td>S15E05</td>
+    </tr>
+    <tr>
+      <th>245</th>
+      <td>88</td>
+      <td>MULTI_2022-04-11_01</td>
+      <td>2022-04-14T12:58Z</td>
+      <td>Wind</td>
+      <td>0.994</td>
+      <td>0.1</td>
+      <td>-5.7</td>
+      <td>-</td>
+      <td>509</td>
+      <td>20.8</td>
+      <td>-13.8</td>
+      <td>ICME_Wind_MOESTL_20220414_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>246</th>
+      <td>88</td>
+      <td>MULTI_2022-04-11_01</td>
+      <td>2022-04-13T03:52Z</td>
+      <td>BepiColombo</td>
+      <td>0.660</td>
+      <td>-0.6</td>
+      <td>-2.3</td>
+      <td>-</td>
+      <td>-</td>
+      <td>42.4</td>
+      <td>-39.7</td>
+      <td>ICME_BEPI_MOESTL_20220413_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>89</td>
       <td>MULTI_2022-04-09_01</td>
       <td>2022-04-13T01:46Z</td>
       <td>Wind</td>
@@ -2787,8 +3987,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>173</th>
-      <td>58</td>
+      <th>248</th>
+      <td>89</td>
       <td>MULTI_2022-04-09_01</td>
       <td>2022-04-09T20:27Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -2803,8 +4003,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>174</th>
-      <td>58</td>
+      <th>249</th>
+      <td>89</td>
       <td>MULTI_2022-04-09_01</td>
       <td>2022-04-09T14:08Z</td>
       <td>HIA</td>
@@ -2819,8 +4019,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>175</th>
-      <td>59</td>
+      <th>250</th>
+      <td>90</td>
       <td>MULTI_2022-04-04_01</td>
       <td>2022-04-08T22:26Z</td>
       <td>Wind</td>
@@ -2835,8 +4035,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>176</th>
-      <td>59</td>
+      <th>251</th>
+      <td>90</td>
       <td>MULTI_2022-04-04_01</td>
       <td>2022-04-05T04:08Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -2851,8 +4051,8 @@
       <td>S25E20</td>
     </tr>
     <tr>
-      <th>177</th>
-      <td>59</td>
+      <th>252</th>
+      <td>90</td>
       <td>MULTI_2022-04-04_01</td>
       <td>2022-04-04T15:28Z</td>
       <td>HIA</td>
@@ -2867,8 +4067,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>178</th>
-      <td>60</td>
+      <th>253</th>
+      <td>91</td>
       <td>MULTI_2022-03-28_01</td>
       <td>2022-03-31T01:40Z</td>
       <td>Wind</td>
@@ -2883,24 +4083,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>179</th>
-      <td>60</td>
-      <td>MULTI_2022-03-28_01</td>
-      <td>2022-03-28T17:19Z</td>
-      <td>SOHO: LASCO/C2</td>
-      <td>0.987</td>
-      <td>-0.0</td>
-      <td>-6.8</td>
-      <td>12.0</td>
-      <td>662</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2022-03-28T12:09:00-CME-001</td>
-      <td>N12W01</td>
-    </tr>
-    <tr>
-      <th>180</th>
-      <td>60</td>
+      <th>254</th>
+      <td>91</td>
       <td>MULTI_2022-03-28_01</td>
       <td>2022-03-29T22:52Z</td>
       <td>BepiColombo</td>
@@ -2915,8 +4099,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>181</th>
-      <td>60</td>
+      <th>255</th>
+      <td>91</td>
+      <td>MULTI_2022-03-28_01</td>
+      <td>2022-03-28T17:19Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>0.987</td>
+      <td>-0.0</td>
+      <td>-6.8</td>
+      <td>12.0</td>
+      <td>662</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2022-03-28T12:09:00-CME-001</td>
+      <td>N12W01</td>
+    </tr>
+    <tr>
+      <th>256</th>
+      <td>91</td>
       <td>MULTI_2022-03-28_01</td>
       <td>2022-03-28T14:08Z</td>
       <td>HIA</td>
@@ -2931,8 +4131,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>182</th>
-      <td>61</td>
+      <th>257</th>
+      <td>92</td>
       <td>MULTI_2022-03-10_01</td>
       <td>2022-03-10T23:28Z</td>
       <td>HIA</td>
@@ -2947,40 +4147,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>183</th>
-      <td>61</td>
-      <td>MULTI_2022-03-10_01</td>
-      <td>2022-03-13T10:04Z</td>
-      <td>Wind</td>
-      <td>0.985</td>
-      <td>0.2</td>
-      <td>-7.2</td>
-      <td>-</td>
-      <td>422</td>
-      <td>24.4</td>
-      <td>-3.4</td>
-      <td>ICME_Wind_MOESTL_20220313_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>184</th>
-      <td>61</td>
-      <td>MULTI_2022-03-10_01</td>
-      <td>2022-03-11T19:53Z</td>
-      <td>SolarOrbiter</td>
-      <td>0.439</td>
-      <td>10.0</td>
-      <td>-4.3</td>
-      <td>-</td>
-      <td>555</td>
-      <td>106.8</td>
-      <td>-78.0</td>
-      <td>ICME_SOLO_MOESTL_20220311_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>185</th>
-      <td>61</td>
+      <th>258</th>
+      <td>92</td>
       <td>MULTI_2022-03-10_01</td>
       <td>2022-03-11T01:06Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -2995,8 +4163,40 @@
       <td>N12W12</td>
     </tr>
     <tr>
-      <th>186</th>
-      <td>62</td>
+      <th>259</th>
+      <td>92</td>
+      <td>MULTI_2022-03-10_01</td>
+      <td>2022-03-13T10:04Z</td>
+      <td>Wind</td>
+      <td>0.985</td>
+      <td>0.2</td>
+      <td>-7.2</td>
+      <td>-</td>
+      <td>422</td>
+      <td>24.4</td>
+      <td>-3.4</td>
+      <td>ICME_Wind_MOESTL_20220313_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>260</th>
+      <td>92</td>
+      <td>MULTI_2022-03-10_01</td>
+      <td>2022-03-11T19:53Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.439</td>
+      <td>10.0</td>
+      <td>-4.3</td>
+      <td>-</td>
+      <td>555</td>
+      <td>106.8</td>
+      <td>-78.0</td>
+      <td>ICME_SOLO_MOESTL_20220311_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>261</th>
+      <td>93</td>
       <td>MULTI_2022-03-07_01</td>
       <td>2022-03-10T16:12Z</td>
       <td>Wind</td>
@@ -3011,8 +4211,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>187</th>
-      <td>62</td>
+      <th>262</th>
+      <td>93</td>
       <td>MULTI_2022-03-07_01</td>
       <td>2022-03-08T14:46Z</td>
       <td>SolarOrbiter</td>
@@ -3027,8 +4227,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>188</th>
-      <td>62</td>
+      <th>263</th>
+      <td>93</td>
       <td>MULTI_2022-03-07_01</td>
       <td>2022-03-07T08:05Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -3043,8 +4243,8 @@
       <td>N17W28</td>
     </tr>
     <tr>
-      <th>189</th>
-      <td>62</td>
+      <th>264</th>
+      <td>93</td>
       <td>MULTI_2022-03-07_01</td>
       <td>2022-03-07T04:48Z</td>
       <td>HIA</td>
@@ -3059,8 +4259,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>190</th>
-      <td>63</td>
+      <th>265</th>
+      <td>94</td>
       <td>MULTI_2022-02-06_01</td>
       <td>2022-02-09T20:04Z</td>
       <td>Wind</td>
@@ -3075,8 +4275,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>191</th>
-      <td>63</td>
+      <th>266</th>
+      <td>94</td>
       <td>MULTI_2022-02-06_01</td>
       <td>2022-02-06T19:52Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -3091,8 +4291,8 @@
       <td>S21W06</td>
     </tr>
     <tr>
-      <th>192</th>
-      <td>63</td>
+      <th>267</th>
+      <td>94</td>
       <td>MULTI_2022-02-06_01</td>
       <td>2022-02-06T18:08Z</td>
       <td>HIA</td>
@@ -3107,24 +4307,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>193</th>
-      <td>64</td>
-      <td>MULTI_2022-01-29_01</td>
-      <td>2022-01-30T02:48Z</td>
-      <td>HIA</td>
-      <td>0.966</td>
-      <td>-34.6</td>
-      <td>-2.5</td>
-      <td>7</td>
-      <td>551</td>
-      <td>-</td>
-      <td>-</td>
-      <td>HCME_A__20220130_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>194</th>
-      <td>64</td>
+      <th>268</th>
+      <td>95</td>
       <td>MULTI_2022-01-29_01</td>
       <td>2022-02-02T03:34Z</td>
       <td>STEREO-A</td>
@@ -3139,8 +4323,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>195</th>
-      <td>64</td>
+      <th>269</th>
+      <td>95</td>
       <td>MULTI_2022-01-29_01</td>
       <td>2022-02-01T21:26Z</td>
       <td>Wind</td>
@@ -3155,8 +4339,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>196</th>
-      <td>64</td>
+      <th>270</th>
+      <td>95</td>
       <td>MULTI_2022-01-29_01</td>
       <td>2022-01-30T03:56Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -3171,40 +4355,24 @@
       <td>N17E10</td>
     </tr>
     <tr>
-      <th>197</th>
-      <td>65</td>
-      <td>MULTI_2022-01-22_01</td>
-      <td>2022-01-25T07:24Z</td>
-      <td>STEREO-A</td>
+      <th>271</th>
+      <td>95</td>
+      <td>MULTI_2022-01-29_01</td>
+      <td>2022-01-30T02:48Z</td>
+      <td>HIA</td>
       <td>0.966</td>
-      <td>-34.7</td>
-      <td>-2.0</td>
+      <td>-34.6</td>
+      <td>-2.5</td>
+      <td>7</td>
+      <td>551</td>
       <td>-</td>
-      <td>482</td>
-      <td>15.1</td>
-      <td>-10.2</td>
-      <td>ICME_STEREO_A_MOESTL_20220125_01</td>
+      <td>-</td>
+      <td>HCME_A__20220130_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>198</th>
-      <td>65</td>
-      <td>MULTI_2022-01-22_01</td>
-      <td>2022-01-25T13:05Z</td>
-      <td>SolarOrbiter</td>
-      <td>0.894</td>
-      <td>-17.9</td>
-      <td>-1.8</td>
-      <td>-</td>
-      <td>421</td>
-      <td>15.1</td>
-      <td>-12.8</td>
-      <td>ICME_SOLO_MOESTL_20220125_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>199</th>
-      <td>65</td>
+      <th>272</th>
+      <td>96</td>
       <td>MULTI_2022-01-22_01</td>
       <td>2022-01-22T20:48Z</td>
       <td>HIA</td>
@@ -3219,24 +4387,40 @@
       <td></td>
     </tr>
     <tr>
-      <th>200</th>
-      <td>66</td>
-      <td>MULTI_2021-11-24_01</td>
-      <td>2021-11-24T19:47Z</td>
-      <td>STEREO A: SECCHI/COR2</td>
-      <td>0.961</td>
-      <td>-36.1</td>
-      <td>5.5</td>
-      <td>-3.0</td>
-      <td>561</td>
+      <th>273</th>
+      <td>96</td>
+      <td>MULTI_2022-01-22_01</td>
+      <td>2022-01-25T07:24Z</td>
+      <td>STEREO-A</td>
+      <td>0.966</td>
+      <td>-34.7</td>
+      <td>-2.0</td>
       <td>-</td>
-      <td>-</td>
-      <td>DONKI_2021-11-24T14:09:00-CME-001</td>
-      <td>S30E20</td>
+      <td>482</td>
+      <td>15.1</td>
+      <td>-10.2</td>
+      <td>ICME_STEREO_A_MOESTL_20220125_01</td>
+      <td></td>
     </tr>
     <tr>
-      <th>201</th>
-      <td>66</td>
+      <th>274</th>
+      <td>96</td>
+      <td>MULTI_2022-01-22_01</td>
+      <td>2022-01-25T13:05Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.894</td>
+      <td>-17.9</td>
+      <td>-1.8</td>
+      <td>-</td>
+      <td>421</td>
+      <td>15.1</td>
+      <td>-12.8</td>
+      <td>ICME_SOLO_MOESTL_20220125_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>275</th>
+      <td>97</td>
       <td>MULTI_2021-11-24_01</td>
       <td>2021-11-24T12:48Z</td>
       <td>HIA</td>
@@ -3251,8 +4435,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>202</th>
-      <td>66</td>
+      <th>276</th>
+      <td>97</td>
       <td>MULTI_2021-11-24_01</td>
       <td>2021-11-27T21:54Z</td>
       <td>Wind</td>
@@ -3267,8 +4451,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>203</th>
-      <td>66</td>
+      <th>277</th>
+      <td>97</td>
       <td>MULTI_2021-11-24_01</td>
       <td>2021-11-27T23:00Z</td>
       <td>SolarOrbiter</td>
@@ -3283,8 +4467,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>204</th>
-      <td>67</td>
+      <th>278</th>
+      <td>97</td>
+      <td>MULTI_2021-11-24_01</td>
+      <td>2021-11-24T19:47Z</td>
+      <td>STEREO A: SECCHI/COR2</td>
+      <td>0.961</td>
+      <td>-36.1</td>
+      <td>5.5</td>
+      <td>-3.0</td>
+      <td>561</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2021-11-24T14:09:00-CME-001</td>
+      <td>S30E20</td>
+    </tr>
+    <tr>
+      <th>279</th>
+      <td>98</td>
       <td>MULTI_2021-11-07_01</td>
       <td>2021-11-11T23:11Z</td>
       <td>STEREO-A</td>
@@ -3299,8 +4499,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>205</th>
-      <td>67</td>
+      <th>280</th>
+      <td>98</td>
       <td>MULTI_2021-11-07_01</td>
       <td>2021-11-09T16:22Z</td>
       <td>PSP</td>
@@ -3315,8 +4515,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>206</th>
-      <td>67</td>
+      <th>281</th>
+      <td>98</td>
       <td>MULTI_2021-11-07_01</td>
       <td>2021-11-08T00:23Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -3331,8 +4531,8 @@
       <td>N20E70</td>
     </tr>
     <tr>
-      <th>207</th>
-      <td>68</td>
+      <th>282</th>
+      <td>99</td>
       <td>MULTI_2021-11-03_01</td>
       <td>2021-11-05T10:47Z</td>
       <td>BepiColombo</td>
@@ -3342,13 +4542,13 @@
       <td>-</td>
       <td>-</td>
       <td>60.7</td>
-      <td>-38.3</td>
+      <td>-38.6</td>
       <td>ICME_BEPI_MOESTL_20211105_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>208</th>
-      <td>68</td>
+      <th>283</th>
+      <td>99</td>
       <td>MULTI_2021-11-03_01</td>
       <td>2021-11-04T03:40Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -3363,8 +4563,8 @@
       <td>S26W90</td>
     </tr>
     <tr>
-      <th>209</th>
-      <td>68</td>
+      <th>284</th>
+      <td>99</td>
       <td>MULTI_2021-11-03_01</td>
       <td>2021-11-04T02:08Z</td>
       <td>HIA</td>
@@ -3379,8 +4579,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>210</th>
-      <td>69</td>
+      <th>285</th>
+      <td>100</td>
       <td>MULTI_2021-11-01_01</td>
       <td>2021-11-01T04:08Z</td>
       <td>HIA</td>
@@ -3395,8 +4595,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>211</th>
-      <td>69</td>
+      <th>286</th>
+      <td>100</td>
       <td>MULTI_2021-11-01_01</td>
       <td>2021-11-02T04:48Z</td>
       <td>HIA</td>
@@ -3411,8 +4611,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>212</th>
-      <td>69</td>
+      <th>287</th>
+      <td>100</td>
       <td>MULTI_2021-11-01_01</td>
       <td>2021-11-02T01:20Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -3427,24 +4627,8 @@
       <td>S28W58</td>
     </tr>
     <tr>
-      <th>213</th>
-      <td>69</td>
-      <td>MULTI_2021-11-01_01</td>
-      <td>2021-11-03T14:03Z</td>
-      <td>SolarOrbiter</td>
-      <td>0.846</td>
-      <td>-1.0</td>
-      <td>2.0</td>
-      <td>-</td>
-      <td>656</td>
-      <td>20.5</td>
-      <td>0.6</td>
-      <td>ICME_SOLO_MOESTL_20211103_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>214</th>
-      <td>69</td>
+      <th>288</th>
+      <td>100</td>
       <td>MULTI_2021-11-01_01</td>
       <td>2021-11-03T19:40Z</td>
       <td>Wind</td>
@@ -3459,8 +4643,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>215</th>
-      <td>69</td>
+      <th>289</th>
+      <td>100</td>
       <td>MULTI_2021-11-01_01</td>
       <td>2021-11-02T05:52Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -3475,8 +4659,24 @@
       <td>N17E03</td>
     </tr>
     <tr>
-      <th>216</th>
-      <td>70</td>
+      <th>290</th>
+      <td>100</td>
+      <td>MULTI_2021-11-01_01</td>
+      <td>2021-11-03T14:03Z</td>
+      <td>SolarOrbiter</td>
+      <td>0.846</td>
+      <td>-1.0</td>
+      <td>2.0</td>
+      <td>-</td>
+      <td>656</td>
+      <td>20.5</td>
+      <td>0.6</td>
+      <td>ICME_SOLO_MOESTL_20211103_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>291</th>
+      <td>101</td>
       <td>MULTI_2021-10-28_01</td>
       <td>2021-10-31T09:32Z</td>
       <td>Wind</td>
@@ -3491,8 +4691,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>217</th>
-      <td>70</td>
+      <th>292</th>
+      <td>101</td>
       <td>MULTI_2021-10-28_01</td>
       <td>2021-10-30T22:01Z</td>
       <td>SolarOrbiter</td>
@@ -3507,8 +4707,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>218</th>
-      <td>70</td>
+      <th>293</th>
+      <td>101</td>
       <td>MULTI_2021-10-28_01</td>
       <td>2021-10-28T18:52Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -3523,8 +4723,8 @@
       <td>S26E04</td>
     </tr>
     <tr>
-      <th>219</th>
-      <td>70</td>
+      <th>294</th>
+      <td>101</td>
       <td>MULTI_2021-10-28_01</td>
       <td>2021-10-28T16:08Z</td>
       <td>HIA</td>
@@ -3539,40 +4739,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>220</th>
-      <td>71</td>
-      <td>MULTI_2021-10-19_01</td>
-      <td>2021-10-20T13:08Z</td>
-      <td>BepiColombo</td>
-      <td>0.345</td>
-      <td>60.7</td>
-      <td>2.3</td>
-      <td>-</td>
-      <td>-</td>
-      <td>62.6</td>
-      <td>-51.3</td>
-      <td>ICME_BEPI_MOESTL_20211020_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>221</th>
-      <td>71</td>
-      <td>MULTI_2021-10-19_01</td>
-      <td>2021-10-19T15:22Z</td>
-      <td>SOHO: LASCO/C2</td>
-      <td>0.985</td>
-      <td>0.1</td>
-      <td>5.5</td>
-      <td>58.0</td>
-      <td>323</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2021-10-19T05:00:00-CME-001</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>222</th>
-      <td>71</td>
+      <th>295</th>
+      <td>102</td>
       <td>MULTI_2021-10-19_01</td>
       <td>2021-10-19T05:28Z</td>
       <td>HIA</td>
@@ -3587,8 +4755,40 @@
       <td></td>
     </tr>
     <tr>
-      <th>223</th>
-      <td>72</td>
+      <th>296</th>
+      <td>102</td>
+      <td>MULTI_2021-10-19_01</td>
+      <td>2021-10-20T13:08Z</td>
+      <td>BepiColombo</td>
+      <td>0.345</td>
+      <td>60.7</td>
+      <td>2.3</td>
+      <td>-</td>
+      <td>-</td>
+      <td>62.6</td>
+      <td>-51.3</td>
+      <td>ICME_BEPI_MOESTL_20211020_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>297</th>
+      <td>102</td>
+      <td>MULTI_2021-10-19_01</td>
+      <td>2021-10-19T15:22Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>0.985</td>
+      <td>0.1</td>
+      <td>5.5</td>
+      <td>58.0</td>
+      <td>323</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2021-10-19T05:00:00-CME-001</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>298</th>
+      <td>103</td>
       <td>MULTI_2021-10-12_01</td>
       <td>2021-10-12T06:08Z</td>
       <td>HIA</td>
@@ -3603,24 +4803,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>224</th>
-      <td>72</td>
-      <td>MULTI_2021-10-12_01</td>
-      <td>2021-10-12T09:40Z</td>
-      <td>SOHO: LASCO/C2</td>
-      <td>0.987</td>
-      <td>0.0</td>
-      <td>6.0</td>
-      <td>30.0</td>
-      <td>512</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2021-10-12T03:24:00-CME-001</td>
-      <td>N16W30</td>
-    </tr>
-    <tr>
-      <th>225</th>
-      <td>72</td>
+      <th>299</th>
+      <td>103</td>
       <td>MULTI_2021-10-12_01</td>
       <td>2021-10-14T23:12Z</td>
       <td>SolarOrbiter</td>
@@ -3635,24 +4819,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>226</th>
-      <td>73</td>
-      <td>MULTI_2021-10-07_01</td>
-      <td>2021-10-07T07:28Z</td>
-      <td>HIA</td>
-      <td>0.957</td>
-      <td>-39.1</td>
-      <td>7.2</td>
-      <td>8</td>
-      <td>368</td>
+      <th>300</th>
+      <td>103</td>
+      <td>MULTI_2021-10-12_01</td>
+      <td>2021-10-12T09:40Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>0.987</td>
+      <td>0.0</td>
+      <td>6.0</td>
+      <td>30.0</td>
+      <td>512</td>
       <td>-</td>
       <td>-</td>
-      <td>HCME_A__20211007_01</td>
-      <td></td>
+      <td>DONKI_2021-10-12T03:24:00-CME-001</td>
+      <td>N16W30</td>
     </tr>
     <tr>
-      <th>227</th>
-      <td>73</td>
+      <th>301</th>
+      <td>104</td>
       <td>MULTI_2021-10-07_01</td>
       <td>2021-10-12T01:48Z</td>
       <td>Wind</td>
@@ -3667,8 +4851,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>228</th>
-      <td>73</td>
+      <th>302</th>
+      <td>104</td>
       <td>MULTI_2021-10-07_01</td>
       <td>2021-10-07T14:08Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -3683,8 +4867,24 @@
       <td>S20W10</td>
     </tr>
     <tr>
-      <th>229</th>
-      <td>74</td>
+      <th>303</th>
+      <td>104</td>
+      <td>MULTI_2021-10-07_01</td>
+      <td>2021-10-07T07:28Z</td>
+      <td>HIA</td>
+      <td>0.957</td>
+      <td>-39.1</td>
+      <td>7.2</td>
+      <td>8</td>
+      <td>368</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20211007_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>304</th>
+      <td>105</td>
       <td>MULTI_2021-10-01_01</td>
       <td>2021-10-06T02:20Z</td>
       <td>Wind</td>
@@ -3699,8 +4899,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>230</th>
-      <td>74</td>
+      <th>305</th>
+      <td>105</td>
       <td>MULTI_2021-10-01_01</td>
       <td>2021-10-04T00:31Z</td>
       <td>SolarOrbiter</td>
@@ -3715,8 +4915,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>231</th>
-      <td>74</td>
+      <th>306</th>
+      <td>105</td>
       <td>MULTI_2021-10-01_01</td>
       <td>2021-10-02T05:35Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -3731,8 +4931,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>232</th>
-      <td>74</td>
+      <th>307</th>
+      <td>105</td>
       <td>MULTI_2021-10-01_01</td>
       <td>2021-10-02T00:49Z</td>
       <td>HIA</td>
@@ -3747,8 +4947,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>233</th>
-      <td>75</td>
+      <th>308</th>
+      <td>106</td>
       <td>MULTI_2021-09-28_01</td>
       <td>2021-10-01T12:48Z</td>
       <td>Wind</td>
@@ -3763,8 +4963,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>234</th>
-      <td>75</td>
+      <th>309</th>
+      <td>106</td>
       <td>MULTI_2021-09-28_01</td>
       <td>2021-09-28T12:13Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -3779,8 +4979,8 @@
       <td>S27W45</td>
     </tr>
     <tr>
-      <th>235</th>
-      <td>75</td>
+      <th>310</th>
+      <td>106</td>
       <td>MULTI_2021-09-28_01</td>
       <td>2021-09-28T09:28Z</td>
       <td>HIA</td>
@@ -3795,40 +4995,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>236</th>
-      <td>76</td>
-      <td>MULTI_2021-09-13_01</td>
-      <td>2021-09-17T01:14Z</td>
-      <td>Wind</td>
-      <td>0.996</td>
-      <td>0.2</td>
-      <td>7.2</td>
-      <td>-</td>
-      <td>347</td>
-      <td>9.7</td>
-      <td>-7.5</td>
-      <td>ICME_Wind_MOESTL_20210917_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>237</th>
-      <td>76</td>
-      <td>MULTI_2021-09-13_01</td>
-      <td>2021-09-13T18:19Z</td>
-      <td>SOHO: LASCO/C2</td>
-      <td>0.996</td>
-      <td>-0.2</td>
-      <td>7.2</td>
-      <td>9.0</td>
-      <td>394</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2021-09-13T10:36:00-CME-001</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>238</th>
-      <td>76</td>
+      <th>311</th>
+      <td>107</td>
       <td>MULTI_2021-09-13_01</td>
       <td>2021-09-13T14:48Z</td>
       <td>HIA</td>
@@ -3843,8 +5011,40 @@
       <td></td>
     </tr>
     <tr>
-      <th>239</th>
-      <td>77</td>
+      <th>312</th>
+      <td>107</td>
+      <td>MULTI_2021-09-13_01</td>
+      <td>2021-09-17T01:14Z</td>
+      <td>Wind</td>
+      <td>0.996</td>
+      <td>0.2</td>
+      <td>7.2</td>
+      <td>-</td>
+      <td>347</td>
+      <td>9.7</td>
+      <td>-7.5</td>
+      <td>ICME_Wind_MOESTL_20210917_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>313</th>
+      <td>107</td>
+      <td>MULTI_2021-09-13_01</td>
+      <td>2021-09-13T18:19Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>0.996</td>
+      <td>-0.2</td>
+      <td>7.2</td>
+      <td>9.0</td>
+      <td>394</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2021-09-13T10:36:00-CME-001</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>314</th>
+      <td>108</td>
       <td>MULTI_2021-09-12_01</td>
       <td>2021-09-13T16:58Z</td>
       <td>STEREO-A</td>
@@ -3859,8 +5059,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>240</th>
-      <td>77</td>
+      <th>315</th>
+      <td>108</td>
       <td>MULTI_2021-09-12_01</td>
       <td>2021-09-12T15:53Z</td>
       <td>PSP</td>
@@ -3875,8 +5075,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>241</th>
-      <td>78</td>
+      <th>316</th>
+      <td>109</td>
       <td>MULTI_2021-09-05_01</td>
       <td>2021-09-10T22:34Z</td>
       <td>Wind</td>
@@ -3891,8 +5091,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>242</th>
-      <td>78</td>
+      <th>317</th>
+      <td>109</td>
       <td>MULTI_2021-09-05_01</td>
       <td>2021-09-06T04:21Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -3907,8 +5107,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>243</th>
-      <td>78</td>
+      <th>318</th>
+      <td>109</td>
       <td>MULTI_2021-09-05_01</td>
       <td>2021-09-06T04:08Z</td>
       <td>HIA</td>
@@ -3923,24 +5123,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>244</th>
-      <td>79</td>
-      <td>MULTI_2021-09-04_01</td>
-      <td>2021-09-05T10:08Z</td>
-      <td>HIA</td>
-      <td>0.956</td>
-      <td>-41.5</td>
-      <td>5.3</td>
-      <td>-24</td>
-      <td>357</td>
-      <td>-</td>
-      <td>-</td>
-      <td>HCME_A__20210905_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>245</th>
-      <td>79</td>
+      <th>319</th>
+      <td>110</td>
       <td>MULTI_2021-09-04_01</td>
       <td>2021-09-10T10:42Z</td>
       <td>Wind</td>
@@ -3955,8 +5139,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>246</th>
-      <td>79</td>
+      <th>320</th>
+      <td>110</td>
       <td>MULTI_2021-09-04_01</td>
       <td>2021-09-05T10:51Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -3971,8 +5155,24 @@
       <td>N21E06</td>
     </tr>
     <tr>
-      <th>247</th>
-      <td>80</td>
+      <th>321</th>
+      <td>110</td>
+      <td>MULTI_2021-09-04_01</td>
+      <td>2021-09-05T10:08Z</td>
+      <td>HIA</td>
+      <td>0.956</td>
+      <td>-41.5</td>
+      <td>5.3</td>
+      <td>-24</td>
+      <td>357</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20210905_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>322</th>
+      <td>111</td>
       <td>MULTI_2021-08-23_01</td>
       <td>2021-08-27T00:14Z</td>
       <td>Wind</td>
@@ -3987,8 +5187,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>248</th>
-      <td>80</td>
+      <th>323</th>
+      <td>111</td>
       <td>MULTI_2021-08-23_01</td>
       <td>2021-08-23T14:36Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -4003,8 +5203,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>249</th>
-      <td>80</td>
+      <th>324</th>
+      <td>111</td>
       <td>MULTI_2021-08-23_01</td>
       <td>2021-08-23T10:48Z</td>
       <td>HIA</td>
@@ -4019,40 +5219,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>250</th>
-      <td>81</td>
-      <td>MULTI_2021-07-31_01</td>
-      <td>2021-08-06T10:00Z</td>
-      <td>Wind</td>
-      <td>1.003</td>
-      <td>0.0</td>
-      <td>6.2</td>
-      <td>-</td>
-      <td>314</td>
-      <td>10.4</td>
-      <td>-8.6</td>
-      <td>ICME_Wind_MOESTL_20210806_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>251</th>
-      <td>81</td>
-      <td>MULTI_2021-07-31_01</td>
-      <td>2021-08-01T13:32Z</td>
-      <td>STEREO A: SECCHI/COR2</td>
-      <td>0.958</td>
-      <td>-44.4</td>
-      <td>1.2</td>
-      <td>39.0</td>
-      <td>180</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2021-07-31T17:38:00-CME-001</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>252</th>
-      <td>81</td>
+      <th>325</th>
+      <td>112</td>
       <td>MULTI_2021-07-31_01</td>
       <td>2021-08-01T03:28Z</td>
       <td>HIA</td>
@@ -4067,8 +5235,40 @@
       <td></td>
     </tr>
     <tr>
-      <th>253</th>
-      <td>82</td>
+      <th>326</th>
+      <td>112</td>
+      <td>MULTI_2021-07-31_01</td>
+      <td>2021-08-06T10:00Z</td>
+      <td>Wind</td>
+      <td>1.003</td>
+      <td>0.0</td>
+      <td>6.2</td>
+      <td>-</td>
+      <td>314</td>
+      <td>10.4</td>
+      <td>-8.6</td>
+      <td>ICME_Wind_MOESTL_20210806_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>327</th>
+      <td>112</td>
+      <td>MULTI_2021-07-31_01</td>
+      <td>2021-08-01T13:32Z</td>
+      <td>STEREO A: SECCHI/COR2</td>
+      <td>0.958</td>
+      <td>-44.4</td>
+      <td>1.2</td>
+      <td>39.0</td>
+      <td>180</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2021-07-31T17:38:00-CME-001</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>328</th>
+      <td>113</td>
       <td>MULTI_2021-07-25_01</td>
       <td>2021-07-26T01:38Z</td>
       <td>SolarOrbiter</td>
@@ -4083,8 +5283,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>254</th>
-      <td>82</td>
+      <th>329</th>
+      <td>113</td>
       <td>MULTI_2021-07-25_01</td>
       <td>2021-07-25T22:10Z</td>
       <td>BepiColombo</td>
@@ -4094,13 +5294,13 @@
       <td>-</td>
       <td>-</td>
       <td>9.8</td>
-      <td>-6.9</td>
+      <td>-7.0</td>
       <td>ICME_BEPI_MOESTL_20210725_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>255</th>
-      <td>83</td>
+      <th>330</th>
+      <td>114</td>
       <td>MULTI_2021-07-07_01</td>
       <td>2021-07-07T23:28Z</td>
       <td>HIA</td>
@@ -4115,24 +5315,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>256</th>
-      <td>83</td>
-      <td>MULTI_2021-07-07_01</td>
-      <td>2021-07-08T03:25Z</td>
-      <td>SOHO: LASCO/C2</td>
-      <td>1.008</td>
-      <td>0.0</td>
-      <td>3.7</td>
-      <td>59.0</td>
-      <td>328</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2021-07-07T16:24:00-CME-001</td>
-      <td>N17W50</td>
-    </tr>
-    <tr>
-      <th>257</th>
-      <td>83</td>
+      <th>331</th>
+      <td>114</td>
       <td>MULTI_2021-07-07_01</td>
       <td>2021-07-11T09:06Z</td>
       <td>PSP</td>
@@ -4147,8 +5331,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>258</th>
-      <td>84</td>
+      <th>332</th>
+      <td>114</td>
+      <td>MULTI_2021-07-07_01</td>
+      <td>2021-07-08T03:25Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>1.008</td>
+      <td>0.0</td>
+      <td>3.7</td>
+      <td>59.0</td>
+      <td>328</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2021-07-07T16:24:00-CME-001</td>
+      <td>N17W50</td>
+    </tr>
+    <tr>
+      <th>333</th>
+      <td>115</td>
       <td>MULTI_2021-06-26_01</td>
       <td>2021-06-30T22:53Z</td>
       <td>SolarOrbiter</td>
@@ -4163,8 +5363,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>259</th>
-      <td>84</td>
+      <th>334</th>
+      <td>115</td>
       <td>MULTI_2021-06-26_01</td>
       <td>2021-06-30T22:18Z</td>
       <td>BepiColombo</td>
@@ -4174,13 +5374,13 @@
       <td>-</td>
       <td>-</td>
       <td>17.8</td>
-      <td>-14.0</td>
+      <td>-14.3</td>
       <td>ICME_BEPI_MOESTL_20210630_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>260</th>
-      <td>84</td>
+      <th>335</th>
+      <td>115</td>
       <td>MULTI_2021-06-26_01</td>
       <td>2021-06-27T11:27Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -4195,8 +5395,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>261</th>
-      <td>85</td>
+      <th>336</th>
+      <td>116</td>
       <td>MULTI_2021-06-27_01</td>
       <td>2021-06-30T14:58Z</td>
       <td>PSP</td>
@@ -4211,8 +5411,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>262</th>
-      <td>85</td>
+      <th>337</th>
+      <td>116</td>
       <td>MULTI_2021-06-27_01</td>
       <td>2021-06-28T01:47Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -4227,8 +5427,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>263</th>
-      <td>85</td>
+      <th>338</th>
+      <td>116</td>
       <td>MULTI_2021-06-27_01</td>
       <td>2021-06-27T12:48Z</td>
       <td>HIA</td>
@@ -4243,8 +5443,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>264</th>
-      <td>86</td>
+      <th>339</th>
+      <td>117</td>
       <td>MULTI_2021-06-20_01</td>
       <td>2021-06-24T01:28Z</td>
       <td>PSP</td>
@@ -4259,8 +5459,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>265</th>
-      <td>86</td>
+      <th>340</th>
+      <td>117</td>
       <td>MULTI_2021-06-20_01</td>
       <td>2021-06-20T12:48Z</td>
       <td>HIA</td>
@@ -4275,8 +5475,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>266</th>
-      <td>87</td>
+      <th>341</th>
+      <td>118</td>
       <td>MULTI_2021-06-15_01</td>
       <td>2021-06-16T18:08Z</td>
       <td>HIA</td>
@@ -4291,24 +5491,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>267</th>
-      <td>87</td>
-      <td>MULTI_2021-06-15_01</td>
-      <td>2021-06-19T20:44Z</td>
-      <td>STEREO-A</td>
-      <td>0.962</td>
-      <td>-48.3</td>
-      <td>-4.2</td>
-      <td>-</td>
-      <td>332</td>
-      <td>11.5</td>
-      <td>-8.7</td>
-      <td>ICME_STEREO_A_MOESTL_20210619_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>268</th>
-      <td>87</td>
+      <th>342</th>
+      <td>118</td>
       <td>MULTI_2021-06-15_01</td>
       <td>2021-06-15T20:02Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -4323,24 +5507,24 @@
       <td>S22E12</td>
     </tr>
     <tr>
-      <th>269</th>
-      <td>88</td>
-      <td>MULTI_2021-06-09_01</td>
-      <td>2021-06-09T22:48Z</td>
-      <td>HIA</td>
+      <th>343</th>
+      <td>118</td>
+      <td>MULTI_2021-06-15_01</td>
+      <td>2021-06-19T20:44Z</td>
+      <td>STEREO-A</td>
       <td>0.962</td>
-      <td>-49.3</td>
-      <td>-5.2</td>
-      <td>34</td>
-      <td>435</td>
+      <td>-48.3</td>
+      <td>-4.2</td>
       <td>-</td>
-      <td>-</td>
-      <td>HCME_A__20210609_02</td>
+      <td>332</td>
+      <td>11.5</td>
+      <td>-8.7</td>
+      <td>ICME_STEREO_A_MOESTL_20210619_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>270</th>
-      <td>88</td>
+      <th>344</th>
+      <td>119</td>
       <td>MULTI_2021-06-09_01</td>
       <td>2021-06-12T06:01Z</td>
       <td>PSP</td>
@@ -4355,8 +5539,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>271</th>
-      <td>89</td>
+      <th>345</th>
+      <td>119</td>
+      <td>MULTI_2021-06-09_01</td>
+      <td>2021-06-09T22:48Z</td>
+      <td>HIA</td>
+      <td>0.962</td>
+      <td>-49.3</td>
+      <td>-5.2</td>
+      <td>34</td>
+      <td>435</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20210609_02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>346</th>
+      <td>120</td>
       <td>MULTI_2021-05-28_01</td>
       <td>2021-05-30T08:08Z</td>
       <td>PSP</td>
@@ -4371,8 +5571,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>272</th>
-      <td>89</td>
+      <th>347</th>
+      <td>120</td>
       <td>MULTI_2021-05-28_01</td>
       <td>2021-05-29T03:16Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -4387,8 +5587,8 @@
       <td>N19W68</td>
     </tr>
     <tr>
-      <th>273</th>
-      <td>89</td>
+      <th>348</th>
+      <td>120</td>
       <td>MULTI_2021-05-28_01</td>
       <td>2021-05-29T00:48Z</td>
       <td>HIA</td>
@@ -4403,8 +5603,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>274</th>
-      <td>90</td>
+      <th>349</th>
+      <td>121</td>
       <td>MULTI_2021-05-25_01</td>
       <td>2021-05-28T02:36Z</td>
       <td>PSP</td>
@@ -4419,8 +5619,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>275</th>
-      <td>90</td>
+      <th>350</th>
+      <td>121</td>
       <td>MULTI_2021-05-25_01</td>
       <td>2021-05-26T04:50Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -4435,8 +5635,8 @@
       <td>S40W50</td>
     </tr>
     <tr>
-      <th>276</th>
-      <td>90</td>
+      <th>351</th>
+      <td>121</td>
       <td>MULTI_2021-05-25_01</td>
       <td>2021-05-26T01:28Z</td>
       <td>HIA</td>
@@ -4451,8 +5651,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>277</th>
-      <td>91</td>
+      <th>352</th>
+      <td>122</td>
       <td>MULTI_2021-05-26_01</td>
       <td>2021-05-26T11:44Z</td>
       <td>Wind</td>
@@ -4467,8 +5667,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>278</th>
-      <td>91</td>
+      <th>353</th>
+      <td>122</td>
       <td>MULTI_2021-05-26_01</td>
       <td>2021-05-26T06:11Z</td>
       <td>STEREO-A</td>
@@ -4483,24 +5683,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>279</th>
-      <td>92</td>
-      <td>MULTI_2021-05-09_01</td>
-      <td>2021-05-09T15:54Z</td>
-      <td>STEREO A: SECCHI/COR2</td>
-      <td>0.965</td>
-      <td>-52.1</td>
-      <td>-7.2</td>
-      <td>-10.0</td>
-      <td>717</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2021-05-09T11:23:00-CME-001</td>
-      <td>S20E10</td>
-    </tr>
-    <tr>
-      <th>280</th>
-      <td>92</td>
+      <th>354</th>
+      <td>123</td>
       <td>MULTI_2021-05-09_01</td>
       <td>2021-05-09T13:28Z</td>
       <td>HIA</td>
@@ -4515,8 +5699,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>281</th>
-      <td>92</td>
+      <th>355</th>
+      <td>123</td>
       <td>MULTI_2021-05-09_01</td>
       <td>2021-05-12T05:54Z</td>
       <td>Wind</td>
@@ -4531,8 +5715,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>282</th>
-      <td>93</td>
+      <th>356</th>
+      <td>123</td>
+      <td>MULTI_2021-05-09_01</td>
+      <td>2021-05-09T15:54Z</td>
+      <td>STEREO A: SECCHI/COR2</td>
+      <td>0.965</td>
+      <td>-52.1</td>
+      <td>-7.2</td>
+      <td>-10.0</td>
+      <td>717</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2021-05-09T11:23:00-CME-001</td>
+      <td>S20E10</td>
+    </tr>
+    <tr>
+      <th>357</th>
+      <td>124</td>
       <td>MULTI_2021-05-08_01</td>
       <td>2021-05-10T06:24Z</td>
       <td>SolarOrbiter</td>
@@ -4547,8 +5747,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>283</th>
-      <td>93</td>
+      <th>358</th>
+      <td>124</td>
       <td>MULTI_2021-05-08_01</td>
       <td>2021-05-08T18:34Z</td>
       <td>BepiColombo</td>
@@ -4558,13 +5758,13 @@
       <td>-</td>
       <td>-</td>
       <td>17.8</td>
-      <td>-13.9</td>
+      <td>-14.0</td>
       <td>ICME_BEPI_MOESTL_20210508_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>284</th>
-      <td>94</td>
+      <th>359</th>
+      <td>125</td>
       <td>MULTI_2021-04-29_01</td>
       <td>2021-05-04T13:25Z</td>
       <td>STEREO-A</td>
@@ -4579,8 +5779,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>285</th>
-      <td>94</td>
+      <th>360</th>
+      <td>125</td>
       <td>MULTI_2021-04-29_01</td>
       <td>2021-04-30T05:54Z</td>
       <td>PSP</td>
@@ -4595,8 +5795,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>286</th>
-      <td>94</td>
+      <th>361</th>
+      <td>125</td>
       <td>MULTI_2021-04-29_01</td>
       <td>2021-04-30T08:32Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -4611,8 +5811,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>287</th>
-      <td>94</td>
+      <th>362</th>
+      <td>125</td>
       <td>MULTI_2021-04-29_01</td>
       <td>2021-04-30T11:29Z</td>
       <td>HIA</td>
@@ -4627,40 +5827,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>288</th>
-      <td>95</td>
-      <td>MULTI_2021-04-26_01</td>
-      <td>2021-04-27T05:29Z</td>
-      <td>HIA</td>
-      <td>0.966</td>
-      <td>-53.1</td>
-      <td>-7.3</td>
-      <td>0</td>
-      <td>350</td>
-      <td>-</td>
-      <td>-</td>
-      <td>HCME_A__20210427_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>289</th>
-      <td>95</td>
-      <td>MULTI_2021-04-26_01</td>
-      <td>2021-04-27T11:47Z</td>
-      <td>STEREO A: SECCHI/COR2</td>
-      <td>0.966</td>
-      <td>-53.1</td>
-      <td>-7.3</td>
-      <td>7.0</td>
-      <td>232</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2021-04-26T19:39:00-CME-001</td>
-      <td>S50W05</td>
-    </tr>
-    <tr>
-      <th>290</th>
-      <td>95</td>
+      <th>363</th>
+      <td>126</td>
       <td>MULTI_2021-04-26_01</td>
       <td>2021-05-01T13:28Z</td>
       <td>Wind</td>
@@ -4675,40 +5843,40 @@
       <td></td>
     </tr>
     <tr>
-      <th>291</th>
-      <td>96</td>
-      <td>MULTI_2021-04-25_01</td>
-      <td>2021-04-30T15:00Z</td>
-      <td>Wind</td>
-      <td>0.999</td>
-      <td>0.0</td>
-      <td>-4.2</td>
+      <th>364</th>
+      <td>126</td>
+      <td>MULTI_2021-04-26_01</td>
+      <td>2021-04-27T11:47Z</td>
+      <td>STEREO A: SECCHI/COR2</td>
+      <td>0.966</td>
+      <td>-53.1</td>
+      <td>-7.3</td>
+      <td>7.0</td>
+      <td>232</td>
       <td>-</td>
-      <td>327</td>
-      <td>8.6</td>
-      <td>-6.9</td>
-      <td>ICME_Wind_MOESTL_20210429_01</td>
+      <td>-</td>
+      <td>DONKI_2021-04-26T19:39:00-CME-001</td>
+      <td>S50W05</td>
+    </tr>
+    <tr>
+      <th>365</th>
+      <td>126</td>
+      <td>MULTI_2021-04-26_01</td>
+      <td>2021-04-27T05:29Z</td>
+      <td>HIA</td>
+      <td>0.966</td>
+      <td>-53.1</td>
+      <td>-7.3</td>
+      <td>0</td>
+      <td>350</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20210427_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>292</th>
-      <td>96</td>
-      <td>MULTI_2021-04-25_01</td>
-      <td>2021-04-26T03:30Z</td>
-      <td>STEREO A: SECCHI/COR2</td>
-      <td>0.966</td>
-      <td>-53.2</td>
-      <td>-7.3</td>
-      <td>37.0</td>
-      <td>172</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2021-04-25T02:54:00-CME-001</td>
-      <td>S24W45</td>
-    </tr>
-    <tr>
-      <th>293</th>
-      <td>96</td>
+      <th>366</th>
+      <td>127</td>
       <td>MULTI_2021-04-25_01</td>
       <td>2021-04-25T18:09Z</td>
       <td>HIA</td>
@@ -4723,8 +5891,40 @@
       <td></td>
     </tr>
     <tr>
-      <th>294</th>
-      <td>97</td>
+      <th>367</th>
+      <td>127</td>
+      <td>MULTI_2021-04-25_01</td>
+      <td>2021-04-26T03:30Z</td>
+      <td>STEREO A: SECCHI/COR2</td>
+      <td>0.966</td>
+      <td>-53.2</td>
+      <td>-7.3</td>
+      <td>37.0</td>
+      <td>172</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2021-04-25T02:54:00-CME-001</td>
+      <td>S24W45</td>
+    </tr>
+    <tr>
+      <th>368</th>
+      <td>127</td>
+      <td>MULTI_2021-04-25_01</td>
+      <td>2021-04-30T15:00Z</td>
+      <td>Wind</td>
+      <td>0.999</td>
+      <td>0.0</td>
+      <td>-4.2</td>
+      <td>-</td>
+      <td>327</td>
+      <td>8.6</td>
+      <td>-6.9</td>
+      <td>ICME_Wind_MOESTL_20210429_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>369</th>
+      <td>128</td>
       <td>MULTI_2021-04-10_01</td>
       <td>2021-04-15T03:16Z</td>
       <td>Wind</td>
@@ -4739,8 +5939,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>295</th>
-      <td>97</td>
+      <th>370</th>
+      <td>128</td>
       <td>MULTI_2021-04-10_01</td>
       <td>2021-04-11T00:52Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -4755,8 +5955,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>296</th>
-      <td>97</td>
+      <th>371</th>
+      <td>128</td>
       <td>MULTI_2021-04-10_01</td>
       <td>2021-04-10T18:08Z</td>
       <td>HIA</td>
@@ -4771,40 +5971,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>297</th>
-      <td>98</td>
-      <td>MULTI_2021-03-31_01</td>
-      <td>2021-03-30T23:24Z</td>
-      <td>STEREO A: SECCHI/COR2</td>
-      <td>0.967</td>
-      <td>-54.7</td>
-      <td>-6.4</td>
-      <td>-26.0</td>
-      <td>369</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2021-03-30T17:38:00-CME-001</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>298</th>
-      <td>98</td>
-      <td>MULTI_2021-03-31_01</td>
-      <td>2021-03-31T00:08Z</td>
-      <td>HIA</td>
-      <td>0.967</td>
-      <td>-54.7</td>
-      <td>-6.4</td>
-      <td>-28</td>
-      <td>397</td>
-      <td>-</td>
-      <td>-</td>
-      <td>HCME_A__20210331_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>299</th>
-      <td>98</td>
+      <th>372</th>
+      <td>129</td>
       <td>MULTI_2021-03-31_01</td>
       <td>2021-04-06T01:27Z</td>
       <td>STEREO-A</td>
@@ -4819,8 +5987,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>300</th>
-      <td>98</td>
+      <th>373</th>
+      <td>129</td>
       <td>MULTI_2021-03-31_01</td>
       <td>2021-04-04T21:52Z</td>
       <td>Wind</td>
@@ -4835,8 +6003,40 @@
       <td></td>
     </tr>
     <tr>
-      <th>301</th>
-      <td>99</td>
+      <th>374</th>
+      <td>129</td>
+      <td>MULTI_2021-03-31_01</td>
+      <td>2021-03-30T23:24Z</td>
+      <td>STEREO A: SECCHI/COR2</td>
+      <td>0.967</td>
+      <td>-54.7</td>
+      <td>-6.4</td>
+      <td>-26.0</td>
+      <td>369</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2021-03-30T17:38:00-CME-001</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>375</th>
+      <td>129</td>
+      <td>MULTI_2021-03-31_01</td>
+      <td>2021-03-31T00:08Z</td>
+      <td>HIA</td>
+      <td>0.967</td>
+      <td>-54.7</td>
+      <td>-6.4</td>
+      <td>-28</td>
+      <td>397</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20210331_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>376</th>
+      <td>130</td>
       <td>MULTI_2021-03-22_01</td>
       <td>2021-03-26T18:00Z</td>
       <td>Wind</td>
@@ -4851,8 +6051,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>302</th>
-      <td>99</td>
+      <th>377</th>
+      <td>130</td>
       <td>MULTI_2021-03-22_01</td>
       <td>2021-03-22T08:48Z</td>
       <td>HIA</td>
@@ -4867,56 +6067,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>303</th>
-      <td>100</td>
-      <td>MULTI_2021-02-20_01</td>
-      <td>2021-02-24T04:08Z</td>
-      <td>Wind</td>
-      <td>0.979</td>
-      <td>0.2</td>
-      <td>-7.1</td>
-      <td>-</td>
-      <td>478</td>
-      <td>9.5</td>
-      <td>-6.2</td>
-      <td>ICME_Wind_MOESTL_20210224_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>304</th>
-      <td>100</td>
-      <td>MULTI_2021-02-20_01</td>
-      <td>2021-02-23T10:34Z</td>
-      <td>STEREO-A</td>
-      <td>0.967</td>
-      <td>-55.7</td>
-      <td>-3.1</td>
-      <td>-</td>
-      <td>422</td>
-      <td>11.7</td>
-      <td>-10.9</td>
-      <td>ICME_STEREO_A_MOESTL_20210223_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>305</th>
-      <td>100</td>
-      <td>MULTI_2021-02-20_01</td>
-      <td>2021-02-21T08:17Z</td>
-      <td>SOHO: LASCO/C2</td>
-      <td>0.980</td>
-      <td>-0.3</td>
-      <td>-7.1</td>
-      <td>-20.0</td>
-      <td>501</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2021-02-21T01:48:00-CME-001</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>306</th>
-      <td>100</td>
+      <th>378</th>
+      <td>131</td>
       <td>MULTI_2021-02-20_01</td>
       <td>2021-02-20T16:48Z</td>
       <td>HIA</td>
@@ -4931,24 +6083,56 @@
       <td></td>
     </tr>
     <tr>
-      <th>307</th>
-      <td>101</td>
-      <td>MULTI_2021-02-11_01</td>
-      <td>2021-02-15T18:58Z</td>
-      <td>Wind</td>
-      <td>0.977</td>
-      <td>0.1</td>
-      <td>-6.8</td>
+      <th>379</th>
+      <td>131</td>
+      <td>MULTI_2021-02-20_01</td>
+      <td>2021-02-21T08:17Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>0.980</td>
+      <td>-0.3</td>
+      <td>-7.1</td>
+      <td>-20.0</td>
+      <td>501</td>
       <td>-</td>
-      <td>349</td>
-      <td>11.1</td>
-      <td>-9.4</td>
-      <td>ICME_Wind_MOESTL_20210215_01</td>
+      <td>-</td>
+      <td>DONKI_2021-02-21T01:48:00-CME-001</td>
       <td></td>
     </tr>
     <tr>
-      <th>308</th>
-      <td>101</td>
+      <th>380</th>
+      <td>131</td>
+      <td>MULTI_2021-02-20_01</td>
+      <td>2021-02-24T04:08Z</td>
+      <td>Wind</td>
+      <td>0.979</td>
+      <td>0.2</td>
+      <td>-7.1</td>
+      <td>-</td>
+      <td>478</td>
+      <td>9.5</td>
+      <td>-6.2</td>
+      <td>ICME_Wind_MOESTL_20210224_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>381</th>
+      <td>131</td>
+      <td>MULTI_2021-02-20_01</td>
+      <td>2021-02-23T10:34Z</td>
+      <td>STEREO-A</td>
+      <td>0.967</td>
+      <td>-55.7</td>
+      <td>-3.1</td>
+      <td>-</td>
+      <td>422</td>
+      <td>11.7</td>
+      <td>-10.9</td>
+      <td>ICME_STEREO_A_MOESTL_20210223_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>382</th>
+      <td>132</td>
       <td>MULTI_2021-02-11_01</td>
       <td>2021-02-11T01:29Z</td>
       <td>HIA</td>
@@ -4963,40 +6147,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>309</th>
-      <td>102</td>
-      <td>MULTI_2020-11-29_02</td>
-      <td>2020-12-01T10:49Z</td>
-      <td>HIA</td>
-      <td>0.959</td>
-      <td>-57.6</td>
-      <td>6.6</td>
-      <td>-37</td>
-      <td>652</td>
+      <th>383</th>
+      <td>132</td>
+      <td>MULTI_2021-02-11_01</td>
+      <td>2021-02-15T18:58Z</td>
+      <td>Wind</td>
+      <td>0.977</td>
+      <td>0.1</td>
+      <td>-6.8</td>
       <td>-</td>
-      <td>-</td>
-      <td>HCME_A__20201201_01</td>
+      <td>349</td>
+      <td>11.1</td>
+      <td>-9.4</td>
+      <td>ICME_Wind_MOESTL_20210215_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>310</th>
-      <td>102</td>
-      <td>MULTI_2020-11-29_02</td>
-      <td>2020-11-29T16:09Z</td>
-      <td>HIA</td>
-      <td>0.959</td>
-      <td>-57.7</td>
-      <td>6.7</td>
-      <td>-23</td>
-      <td>537</td>
-      <td>-</td>
-      <td>-</td>
-      <td>HCME_A__20201129_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>311</th>
-      <td>102</td>
+      <th>384</th>
+      <td>133</td>
       <td>MULTI_2020-11-29_02</td>
       <td>2020-12-03T18:04Z</td>
       <td>STEREO-A</td>
@@ -5011,8 +6179,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>312</th>
-      <td>102</td>
+      <th>385</th>
+      <td>133</td>
       <td>MULTI_2020-11-29_02</td>
       <td>2020-12-01T10:59Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -5027,40 +6195,40 @@
       <td>N35E30</td>
     </tr>
     <tr>
-      <th>313</th>
-      <td>103</td>
-      <td>MULTI_2020-11-29_01</td>
-      <td>2020-12-01T02:22Z</td>
-      <td>PSP</td>
-      <td>0.804</td>
-      <td>-96.8</td>
-      <td>3.8</td>
+      <th>386</th>
+      <td>133</td>
+      <td>MULTI_2020-11-29_02</td>
+      <td>2020-12-01T10:49Z</td>
+      <td>HIA</td>
+      <td>0.959</td>
+      <td>-57.6</td>
+      <td>6.6</td>
+      <td>-37</td>
+      <td>652</td>
       <td>-</td>
-      <td>637</td>
-      <td>39.0</td>
-      <td>13.9</td>
-      <td>ICME_PSP_MOESTL_20201201_01</td>
+      <td>-</td>
+      <td>HCME_A__20201201_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>314</th>
-      <td>103</td>
-      <td>MULTI_2020-11-29_01</td>
-      <td>2020-11-29T16:00Z</td>
-      <td>STEREO A: SECCHI/COR2</td>
-      <td>0.957</td>
+      <th>387</th>
+      <td>133</td>
+      <td>MULTI_2020-11-29_02</td>
+      <td>2020-11-29T16:09Z</td>
+      <td>HIA</td>
+      <td>0.959</td>
       <td>-57.7</td>
       <td>6.7</td>
-      <td>-75.0</td>
-      <td>1336</td>
+      <td>-23</td>
+      <td>537</td>
       <td>-</td>
       <td>-</td>
-      <td>DONKI_2020-11-29T13:24:00-CME-001</td>
-      <td>S23E97</td>
+      <td>HCME_A__20201129_01</td>
+      <td></td>
     </tr>
     <tr>
-      <th>315</th>
-      <td>103</td>
+      <th>388</th>
+      <td>134</td>
       <td>MULTI_2020-11-29_01</td>
       <td>2020-12-01T07:28Z</td>
       <td>STEREO-A</td>
@@ -5075,40 +6243,40 @@
       <td></td>
     </tr>
     <tr>
-      <th>316</th>
-      <td>104</td>
-      <td>MULTI_2020-10-26_01</td>
-      <td>2020-11-01T11:54Z</td>
-      <td>Wind</td>
-      <td>0.984</td>
-      <td>0.1</td>
-      <td>4.3</td>
+      <th>389</th>
+      <td>134</td>
+      <td>MULTI_2020-11-29_01</td>
+      <td>2020-12-01T02:22Z</td>
+      <td>PSP</td>
+      <td>0.804</td>
+      <td>-96.8</td>
+      <td>3.8</td>
       <td>-</td>
-      <td>349</td>
-      <td>9.2</td>
-      <td>-7.0</td>
-      <td>ICME_Wind_MOESTL_20201101_01</td>
+      <td>637</td>
+      <td>39.0</td>
+      <td>13.9</td>
+      <td>ICME_PSP_MOESTL_20201201_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>317</th>
-      <td>104</td>
-      <td>MULTI_2020-10-26_01</td>
-      <td>2020-10-27T14:00Z</td>
+      <th>390</th>
+      <td>134</td>
+      <td>MULTI_2020-11-29_01</td>
+      <td>2020-11-29T16:00Z</td>
       <td>STEREO A: SECCHI/COR2</td>
       <td>0.957</td>
-      <td>-59.7</td>
-      <td>7.2</td>
-      <td>-10.0</td>
-      <td>190</td>
+      <td>-57.7</td>
+      <td>6.7</td>
+      <td>-75.0</td>
+      <td>1336</td>
       <td>-</td>
       <td>-</td>
-      <td>DONKI_2020-10-27T03:39:00-CME-001</td>
-      <td></td>
+      <td>DONKI_2020-11-29T13:24:00-CME-001</td>
+      <td>S23E97</td>
     </tr>
     <tr>
-      <th>318</th>
-      <td>104</td>
+      <th>391</th>
+      <td>135</td>
       <td>MULTI_2020-10-26_01</td>
       <td>2020-10-26T19:29Z</td>
       <td>HIA</td>
@@ -5123,8 +6291,40 @@
       <td></td>
     </tr>
     <tr>
-      <th>319</th>
-      <td>105</td>
+      <th>392</th>
+      <td>135</td>
+      <td>MULTI_2020-10-26_01</td>
+      <td>2020-11-01T11:54Z</td>
+      <td>Wind</td>
+      <td>0.984</td>
+      <td>0.1</td>
+      <td>4.3</td>
+      <td>-</td>
+      <td>349</td>
+      <td>9.2</td>
+      <td>-7.0</td>
+      <td>ICME_Wind_MOESTL_20201101_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>393</th>
+      <td>135</td>
+      <td>MULTI_2020-10-26_01</td>
+      <td>2020-10-27T14:00Z</td>
+      <td>STEREO A: SECCHI/COR2</td>
+      <td>0.957</td>
+      <td>-59.7</td>
+      <td>7.2</td>
+      <td>-10.0</td>
+      <td>190</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2020-10-27T03:39:00-CME-001</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>394</th>
+      <td>136</td>
       <td>MULTI_2020-10-07_01</td>
       <td>2020-10-10T04:07Z</td>
       <td>BepiColombo</td>
@@ -5139,8 +6339,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>320</th>
-      <td>105</td>
+      <th>395</th>
+      <td>136</td>
       <td>MULTI_2020-10-07_01</td>
       <td>2020-10-07T19:29Z</td>
       <td>HIA</td>
@@ -5155,24 +6355,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>321</th>
-      <td>106</td>
-      <td>MULTI_2020-10-06_01</td>
-      <td>2020-10-06T15:29Z</td>
-      <td>HIA</td>
-      <td>0.956</td>
-      <td>-61.1</td>
-      <td>6.2</td>
-      <td>65</td>
-      <td>619</td>
-      <td>-</td>
-      <td>-</td>
-      <td>HCME_A__20201006_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>322</th>
-      <td>106</td>
+      <th>396</th>
+      <td>137</td>
       <td>MULTI_2020-10-06_01</td>
       <td>2020-10-08T10:27Z</td>
       <td>BepiColombo</td>
@@ -5182,13 +6366,13 @@
       <td>-</td>
       <td>-</td>
       <td>16.1</td>
-      <td>-12.6</td>
+      <td>-12.7</td>
       <td>ICME_BEPI_MOESTL_20201008_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>323</th>
-      <td>106</td>
+      <th>397</th>
+      <td>137</td>
       <td>MULTI_2020-10-06_01</td>
       <td>2020-10-06T20:33Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -5203,8 +6387,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>324</th>
-      <td>107</td>
+      <th>398</th>
+      <td>137</td>
+      <td>MULTI_2020-10-06_01</td>
+      <td>2020-10-06T15:29Z</td>
+      <td>HIA</td>
+      <td>0.956</td>
+      <td>-61.1</td>
+      <td>6.2</td>
+      <td>65</td>
+      <td>619</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20201006_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>399</th>
+      <td>138</td>
       <td>MULTI_2020-09-30_01</td>
       <td>2020-10-05T06:52Z</td>
       <td>Wind</td>
@@ -5219,8 +6419,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>325</th>
-      <td>107</td>
+      <th>400</th>
+      <td>138</td>
       <td>MULTI_2020-09-30_01</td>
       <td>2020-09-30T18:49Z</td>
       <td>HIA</td>
@@ -5235,8 +6435,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>326</th>
-      <td>108</td>
+      <th>401</th>
+      <td>139</td>
       <td>MULTI_2020-09-07_01</td>
       <td>2020-09-12T10:23Z</td>
       <td>PSP</td>
@@ -5251,8 +6451,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>327</th>
-      <td>108</td>
+      <th>402</th>
+      <td>139</td>
       <td>MULTI_2020-09-07_01</td>
       <td>2020-09-08T21:43Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -5267,8 +6467,8 @@
       <td>N00W40</td>
     </tr>
     <tr>
-      <th>328</th>
-      <td>108</td>
+      <th>403</th>
+      <td>139</td>
       <td>MULTI_2020-09-07_01</td>
       <td>2020-09-08T16:49Z</td>
       <td>HIA</td>
@@ -5283,40 +6483,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>329</th>
-      <td>109</td>
-      <td>MULTI_2020-08-16_01</td>
-      <td>2020-08-19T21:11Z</td>
-      <td>STEREO-A</td>
-      <td>0.958</td>
-      <td>-64.6</td>
-      <td>1.0</td>
-      <td>-</td>
-      <td>369</td>
-      <td>19.6</td>
-      <td>-13.1</td>
-      <td>ICME_STEREO_A_MOESTL_20200819_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>330</th>
-      <td>109</td>
-      <td>MULTI_2020-08-16_01</td>
-      <td>2020-08-17T00:21Z</td>
-      <td>SOHO: LASCO/C2</td>
-      <td>1.004</td>
-      <td>-0.2</td>
-      <td>6.8</td>
-      <td>-25.0</td>
-      <td>541</td>
-      <td>-</td>
-      <td>-</td>
-      <td>DONKI_2020-08-16T18:24:00-CME-001</td>
-      <td>S30E30</td>
-    </tr>
-    <tr>
-      <th>331</th>
-      <td>109</td>
+      <th>404</th>
+      <td>140</td>
       <td>MULTI_2020-08-16_01</td>
       <td>2020-08-16T14:09Z</td>
       <td>HIA</td>
@@ -5331,24 +6499,40 @@
       <td></td>
     </tr>
     <tr>
-      <th>332</th>
-      <td>110</td>
-      <td>MULTI_2020-07-19_01</td>
-      <td>2020-07-19T15:29Z</td>
-      <td>HIA</td>
-      <td>0.961</td>
-      <td>-67.1</td>
-      <td>-3.2</td>
-      <td>-32</td>
-      <td>344</td>
+      <th>405</th>
+      <td>140</td>
+      <td>MULTI_2020-08-16_01</td>
+      <td>2020-08-19T21:11Z</td>
+      <td>STEREO-A</td>
+      <td>0.958</td>
+      <td>-64.6</td>
+      <td>1.0</td>
       <td>-</td>
-      <td>-</td>
-      <td>HCME_A__20200719_01</td>
+      <td>369</td>
+      <td>19.6</td>
+      <td>-13.1</td>
+      <td>ICME_STEREO_A_MOESTL_20200819_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>333</th>
-      <td>110</td>
+      <th>406</th>
+      <td>140</td>
+      <td>MULTI_2020-08-16_01</td>
+      <td>2020-08-17T00:21Z</td>
+      <td>SOHO: LASCO/C2</td>
+      <td>1.004</td>
+      <td>-0.2</td>
+      <td>6.8</td>
+      <td>-25.0</td>
+      <td>541</td>
+      <td>-</td>
+      <td>-</td>
+      <td>DONKI_2020-08-16T18:24:00-CME-001</td>
+      <td>S30E30</td>
+    </tr>
+    <tr>
+      <th>407</th>
+      <td>141</td>
       <td>MULTI_2020-07-19_01</td>
       <td>2020-07-24T01:42Z</td>
       <td>Wind</td>
@@ -5363,8 +6547,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>334</th>
-      <td>110</td>
+      <th>408</th>
+      <td>141</td>
       <td>MULTI_2020-07-19_01</td>
       <td>2020-07-22T20:50Z</td>
       <td>BepiColombo</td>
@@ -5374,13 +6558,29 @@
       <td>-</td>
       <td>-</td>
       <td>14.4</td>
-      <td>-13.2</td>
+      <td>-13.3</td>
       <td>ICME_BEPI_MOESTL_20200723_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>335</th>
-      <td>111</td>
+      <th>409</th>
+      <td>141</td>
+      <td>MULTI_2020-07-19_01</td>
+      <td>2020-07-19T15:29Z</td>
+      <td>HIA</td>
+      <td>0.961</td>
+      <td>-67.1</td>
+      <td>-3.2</td>
+      <td>-32</td>
+      <td>344</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20200719_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>410</th>
+      <td>142</td>
       <td>MULTI_2020-07-09_01</td>
       <td>2020-07-13T20:18Z</td>
       <td>Wind</td>
@@ -5395,8 +6595,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>336</th>
-      <td>111</td>
+      <th>411</th>
+      <td>142</td>
       <td>MULTI_2020-07-09_01</td>
       <td>2020-07-09T08:49Z</td>
       <td>HIA</td>
@@ -5411,8 +6611,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>337</th>
-      <td>112</td>
+      <th>412</th>
+      <td>143</td>
       <td>MULTI_2020-07-05_01</td>
       <td>2020-07-09T14:17Z</td>
       <td>STEREO-A</td>
@@ -5427,8 +6627,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>338</th>
-      <td>112</td>
+      <th>413</th>
+      <td>143</td>
       <td>MULTI_2020-07-05_01</td>
       <td>2020-07-06T02:42Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -5443,8 +6643,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>339</th>
-      <td>112</td>
+      <th>414</th>
+      <td>143</td>
       <td>MULTI_2020-07-05_01</td>
       <td>2020-07-06T06:09Z</td>
       <td>HIA</td>
@@ -5459,56 +6659,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>340</th>
-      <td>113</td>
-      <td>MULTI_2020-06-22_01</td>
-      <td>2020-06-30T01:12Z</td>
-      <td>Wind</td>
-      <td>1.007</td>
-      <td>-0.2</td>
-      <td>2.8</td>
-      <td>-</td>
-      <td>333</td>
-      <td>6.4</td>
-      <td>-3.2</td>
-      <td>ICME_Wind_MOESTL_20200630_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>341</th>
-      <td>113</td>
-      <td>MULTI_2020-06-22_01</td>
-      <td>2020-06-29T09:44Z</td>
-      <td>BepiColombo</td>
-      <td>0.881</td>
-      <td>-3.9</td>
-      <td>0.7</td>
-      <td>-</td>
-      <td>-</td>
-      <td>9.7</td>
-      <td>-8.8</td>
-      <td>ICME_BEPI_MOESTL_20200629_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>342</th>
-      <td>113</td>
-      <td>MULTI_2020-06-22_01</td>
-      <td>2020-06-25T11:39Z</td>
-      <td>PSP</td>
-      <td>0.523</td>
-      <td>19.9</td>
-      <td>2.4</td>
-      <td>-</td>
-      <td>290</td>
-      <td>27.7</td>
-      <td>-23.1</td>
-      <td>ICME_PSP_MOESTL_20200625_01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>343</th>
-      <td>113</td>
+      <th>415</th>
+      <td>144</td>
       <td>MULTI_2020-06-22_01</td>
       <td>2020-06-23T07:22Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -5523,8 +6675,8 @@
       <td>S20W08</td>
     </tr>
     <tr>
-      <th>344</th>
-      <td>113</td>
+      <th>416</th>
+      <td>144</td>
       <td>MULTI_2020-06-22_01</td>
       <td>2020-06-23T00:49Z</td>
       <td>HIA</td>
@@ -5539,24 +6691,56 @@
       <td></td>
     </tr>
     <tr>
-      <th>345</th>
-      <td>114</td>
-      <td>MULTI_2020-05-27_01</td>
-      <td>2020-05-27T04:49Z</td>
-      <td>HIA</td>
-      <td>0.966</td>
-      <td>-72.2</td>
-      <td>-7.3</td>
-      <td>-47</td>
-      <td>315</td>
+      <th>417</th>
+      <td>144</td>
+      <td>MULTI_2020-06-22_01</td>
+      <td>2020-06-29T09:44Z</td>
+      <td>BepiColombo</td>
+      <td>0.881</td>
+      <td>-3.9</td>
+      <td>0.7</td>
       <td>-</td>
       <td>-</td>
-      <td>HCME_A__20200527_01</td>
+      <td>9.7</td>
+      <td>-8.8</td>
+      <td>ICME_BEPI_MOESTL_20200629_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>346</th>
-      <td>114</td>
+      <th>418</th>
+      <td>144</td>
+      <td>MULTI_2020-06-22_01</td>
+      <td>2020-06-30T01:12Z</td>
+      <td>Wind</td>
+      <td>1.007</td>
+      <td>-0.2</td>
+      <td>2.8</td>
+      <td>-</td>
+      <td>333</td>
+      <td>6.4</td>
+      <td>-3.2</td>
+      <td>ICME_Wind_MOESTL_20200630_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>419</th>
+      <td>144</td>
+      <td>MULTI_2020-06-22_01</td>
+      <td>2020-06-25T11:39Z</td>
+      <td>PSP</td>
+      <td>0.523</td>
+      <td>19.9</td>
+      <td>2.4</td>
+      <td>-</td>
+      <td>290</td>
+      <td>27.7</td>
+      <td>-23.1</td>
+      <td>ICME_PSP_MOESTL_20200625_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>420</th>
+      <td>145</td>
       <td>MULTI_2020-05-27_01</td>
       <td>2020-06-03T07:54Z</td>
       <td>STEREO-A</td>
@@ -5571,8 +6755,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>347</th>
-      <td>114</td>
+      <th>421</th>
+      <td>145</td>
       <td>MULTI_2020-05-27_01</td>
       <td>2020-05-30T13:03Z</td>
       <td>SOHO: LASCO/C2</td>
@@ -5587,8 +6771,24 @@
       <td></td>
     </tr>
     <tr>
-      <th>348</th>
-      <td>115</td>
+      <th>422</th>
+      <td>145</td>
+      <td>MULTI_2020-05-27_01</td>
+      <td>2020-05-27T04:49Z</td>
+      <td>HIA</td>
+      <td>0.966</td>
+      <td>-72.2</td>
+      <td>-7.3</td>
+      <td>-47</td>
+      <td>315</td>
+      <td>-</td>
+      <td>-</td>
+      <td>HCME_A__20200527_01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>423</th>
+      <td>146</td>
       <td>MULTI_2020-05-26_01</td>
       <td>2020-05-29T15:27Z</td>
       <td>BepiColombo</td>
@@ -5603,8 +6803,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>349</th>
-      <td>115</td>
+      <th>424</th>
+      <td>146</td>
       <td>MULTI_2020-05-26_01</td>
       <td>2020-05-29T21:20Z</td>
       <td>Wind</td>
@@ -5619,8 +6819,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>350</th>
-      <td>115</td>
+      <th>425</th>
+      <td>146</td>
       <td>MULTI_2020-05-26_01</td>
       <td>2020-05-26T15:13Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -5635,8 +6835,8 @@
       <td>S40W05</td>
     </tr>
     <tr>
-      <th>351</th>
-      <td>115</td>
+      <th>426</th>
+      <td>146</td>
       <td>MULTI_2020-05-26_01</td>
       <td>2020-05-26T01:29Z</td>
       <td>HIA</td>
@@ -5651,8 +6851,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>352</th>
-      <td>116</td>
+      <th>427</th>
+      <td>147</td>
       <td>MULTI_2020-04-14_01</td>
       <td>2020-04-20T03:09Z</td>
       <td>BepiColombo</td>
@@ -5662,13 +6862,13 @@
       <td>-</td>
       <td>-</td>
       <td>17.1</td>
-      <td>-14.3</td>
+      <td>-14.5</td>
       <td>ICME_BEPI_MOESTL_20200420_01</td>
       <td></td>
     </tr>
     <tr>
-      <th>353</th>
-      <td>116</td>
+      <th>428</th>
+      <td>147</td>
       <td>MULTI_2020-04-14_01</td>
       <td>2020-04-20T01:34Z</td>
       <td>Wind</td>
@@ -5683,8 +6883,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>354</th>
-      <td>116</td>
+      <th>429</th>
+      <td>147</td>
       <td>MULTI_2020-04-14_01</td>
       <td>2020-04-19T05:06Z</td>
       <td>SolarOrbiter</td>
@@ -5699,8 +6899,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>355</th>
-      <td>116</td>
+      <th>430</th>
+      <td>147</td>
       <td>MULTI_2020-04-14_01</td>
       <td>2020-04-15T15:51Z</td>
       <td>STEREO A: SECCHI/COR2</td>
@@ -5715,8 +6915,8 @@
       <td></td>
     </tr>
     <tr>
-      <th>356</th>
-      <td>116</td>
+      <th>431</th>
+      <td>147</td>
       <td>MULTI_2020-04-14_01</td>
       <td>2020-04-15T20:49Z</td>
       <td>HIA</td>

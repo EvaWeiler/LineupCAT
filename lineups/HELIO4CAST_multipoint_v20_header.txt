@@ -1,7 +1,7 @@
-HELIO4CAST LineupCAT v2.0 
+HELIO4CAST LineupCAT v3.0 
 
 This is the HELIO4CAST lineup catalog. 
-This is version 2.0, released 2024-May-7. doi: 10.6084/m9.figshare.15134745 
+This is version 3.0, released 2024-May-7, updated 2025-Apr-25. doi: 10.6084/m9.figshare.15134745 
 
 Rules: If results are produced with this catalog for peer-reviewed scientific publications,
 please contact chris.moestl@outlook.com , eva.weiler@geosphere.at and emma.davies@geosphere.at for possible co-authorships. 
@@ -10,9 +10,9 @@ The reference for this catalog is Moestl et al. 2022 ApJL doi:10.3847/2041-8213/
 The catalog is available as a python pandas dataframe (pickle), json, csv, xlsx, txt, at 
 https://helioforecast.space/lineups and https://doi.org/10.6084/m9.figshare.15134745. 
 
-Number of events: 116
+Number of events: 147
 ICME observatories: Solar Orbiter, Parker Solar Probe (PSP), BepiColombo, Wind, STEREO-A.   
-Time range: April 2020 - April 2024. 
+Time range: April 2020 - December 2024. 
 
 Authors: Eva Weiler, Christian Möstl, Emma E. Davies, Austrian Space Weather Office, GeoSphere Austria, Graz, Austria. 
 Contributors, Andreas J. Weiss, Rachel L. Bailey, Martin A. Reiss, D. Barnes, J. A. Davies, R. A. Harrison. 
@@ -40,5 +40,5 @@ or SWPC CAT with STEREO A: SECCHI/COR2 or SOHO: LASCO/C2, range [-180,180]. unit
 For HIA, the speed derived from SSEF30 modeling in HIGeoCAT; for DONKI, the speed is determined by linearly fitting position/time plots. unit: km/s. 
 10: mo_bmax: Only for in situ observations, maximum total magnetic field in the magnetic obstacle interval (mo_start_time to mo_end_time). unit: nT. 
 11: mo_bzmin: Only for in situ observations, minimum magnetic field Bz component in the magnetic obstacle. unit: nT (RTN). 
-12: id: the id from either the ICMECAT, HIGeoCAT or DONKI, allowing to look up the event directly in these other catalogs. 
+12: catalog_id: the id from either the ICMECAT, HIGeoCAT or DONKI, allowing to look up the event directly in these other catalogs. 
 13: source: Solar source region as given in DONKI.
